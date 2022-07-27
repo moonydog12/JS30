@@ -1,12 +1,12 @@
 # Flex Panels Image Gallery
 
-## Learn
+## Abstract
 
 - CSS flexbox property
 - CSS transition
 - JavaScript event listener
 
-## Note
+## Content
 
 ### CSS flexbox property
 

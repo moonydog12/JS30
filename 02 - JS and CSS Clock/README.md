@@ -1,14 +1,14 @@
 # JavaScript 時鐘
 
-使用 JS 以及 CSS 動畫效果實作簡易時鐘
+## Abstract
 
-### 學習內容
+使用 JS 以及 CSS 動畫效果實作簡易時鐘
 
 - 元素選擇
 - CSS transform 效果
 - SetInterval 非同步函示
 
-### 筆記
+## Content
 
 修改指針角度，讓三根指針都指向 12 點
 

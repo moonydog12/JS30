@@ -1,6 +1,6 @@
 # Array Cardio Day 1
 
-## Learn
+## Abstract
 
 Array methods
 
@@ -9,7 +9,7 @@ Array methods
 - sort
 - reduce
 
-## Note
+## Content
 
 ### filter( ) :
 

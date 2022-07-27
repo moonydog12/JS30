@@ -1,12 +1,12 @@
 # 用 JavaScript 更新 CSS 變數
 
-### 學習內容
+## Abstract
 
 - 設置 CSS 變數
 - 根元素選取
 - NodeList 迭代(iteration)
 
-### 筆記
+## Content
 
 使用 :root 儲存 CSS 變數，prefix 使用--(CSS 規定)。
 (eg. --變數名稱
