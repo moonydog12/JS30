@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>JS + CSS Clock</title>
+    <link rel="stylesheet" href="./clock.css" />
   </head>
   <body>
     <div class="clock">
@@ -12,58 +13,6 @@
         <div class="hand second-hand"></div>
       </div>
     </div>
-
-    <style>
-      html {
-        background: #018ded url(https://unsplash.it/1500/1000?image=881&blur=5);
-        background-size: cover;
-        font-family: 'helvetica neue';
-        text-align: center;
-        font-size: 10px;
-      }
-
-      body {
-        margin: 0;
-        font-size: 2rem;
-        display: flex;
-        flex: 1;
-        min-height: 100vh;
-        align-items: center;
-      }
-
-      .clock {
-        width: 30rem;
-        height: 30rem;
-        border: 20px solid white;
-        border-radius: 50%;
-        margin: 50px auto;
-        position: relative;
-        padding: 2rem;
-        box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
-          inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-
-      .clock-face {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transform: translateY(
-          -3px
-        ); /* account for the height of the clock hands */
-      }
-
-      .hand {
-        width: 50%;
-        height: 6px;
-        background: black;
-        position: absolute;
-        top: 50%;
-        transform-origin: 100%;
-        transform: rotate(90deg);
-        transition: all 0.05s;
-        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-      }
-    </style>
 
     <script>
       const hourHand = document.querySelector('.hour-hand');
@@ -79,13 +28,12 @@
 
         // 分針
         const minutes = now.getMinutes();
-        const minutesDegree = (minutes / 60) * 360 + 90;
+        const minutesDegree = (minutes / 60) * 360 + (seconds / 60) * 6 + 90;
         minuteHand.style.transform = `rotate(${minutesDegree}deg)`;
 
         // 時針
         const hours = now.getHours();
-        console.log(hours);
-        const hourDegree = (hours / 12) * 360 + 90;
+        const hourDegree = (hours / 12) * 360 + (minutes / 60) * 30 + 90;
         hourHand.style.transform = `rotate(${hourDegree}deg)`;
       }
 
