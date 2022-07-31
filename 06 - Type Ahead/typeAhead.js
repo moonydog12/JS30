@@ -24,6 +24,15 @@ function findMatches(wordToMatch, cities) {
 }
 
 function displayMatches() {
+  if (!searchInput.value || searchInput.value === '') {
+    suggestions.innerHTML = `
+  <li>
+    <span class="name">No input value</span>
+    <span class="population">The Missing</span>
+  </li>
+  `;
+    return;
+  }
   const matchArray = findMatches(this.value, cities);
   const html = matchArray
     .map((place) => {
