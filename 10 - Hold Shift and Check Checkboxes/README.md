@@ -21,9 +21,12 @@ Techniques
    });
    ```
 
-1. handleCheck function。
+2. handleCheck fn。
 
-   邏輯：定義最後一個點擊的是 lastChecked，用 inBetween 當做在兩個 checkbox 之間的 checkbox 狀態，若在兩個之間為 true, 其他則為 false。所以最後只要判斷 inBetween 為 true 時打勾。
+   建立了一個區域變數 let inBetween = false 來當作選取區間的標記，
+   並在每次觸發時檢查是否”有按著 shift 點擊”if(e.shiftKey && this.checked)，
+   若有的話則再跑一次 forEach 來透過 inBetween 對每個 checkbox 進行區間標記，
+   把屬於區間內的 checkbox 勾起來，並記錄此次點擊的位置。
 
    ```javascript
    let lastChecked;
@@ -34,10 +37,11 @@ Techniques
      if (e.shiftKey && this.checked) {
        // 迭代每一個checkbox。
        checkboxes.forEach((checkbox) => {
-         // 若點擊的checkbox是目前元素 || checkbox 是上一個點擊的元素
+         // 當前點選的checkbox開始記錄到最後一個點選的checkbox關閉標記
          if (checkbox === this || checkbox === lastChecked) {
            inBetween = !inBetween;
          }
+         // 勾選區間內為true的checkbox
          if (inBetween) {
            checkbox.checked = true;
          }
