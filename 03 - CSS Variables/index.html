@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <title>Scoped CSS Variables and JS</title>
     <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
   </head>
   <body>
     <h2>Update CSS Variables with <span class="hl">JS</span></h2>
-
     <div class="controls">
       <label for="spacing">Spacing:</label>
       <input
@@ -19,7 +19,6 @@
         value="10"
         data-sizing="px"
       />
-
       <label for="blur">Blur:</label>
       <input
         id="blur"
@@ -30,35 +29,9 @@
         value="10"
         data-sizing="px"
       />
-
       <label for="base">Base Color</label>
       <input id="base" type="color" name="base" value="#ffc600" />
     </div>
-
     <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" />
-
-    <script>
-      // 選取所有類別.controls下的inputs el
-      /* nodeList !== array ，兩者可用methods不同 */
-      const inputs = document.querySelectorAll('.controls input'); // inputs儲存input DOM的nodeList
-
-      function handleUpdate() {
-        // dataset 物件格式，包含this指向元素的data標籤(自訂tag)
-        const suffix = this.dataset.sizing || '';
-        console.log(this.name);
-        // 得到文件根元素(:root)的參照
-        document.documentElement.style.setProperty(
-          `--${this.name}`,
-          this.value + suffix
-        );
-      }
-
-      inputs.forEach((input) => {
-        input.addEventListener('change', handleUpdate);
-      });
-      inputs.forEach((input) => {
-        input.addEventListener('mousemove', handleUpdate);
-      });
-    </script>
   </body>
 </html>

@@ -1,0 +1,162 @@
+[33mcommit 8d7a86bad2ebdf622508af3c4f59712319b68868[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: xolodog <losididog@gmail.com>
+Date:   Sat Sep 3 22:33:14 2022 +0800
+
+    complete project 17
+
+[33mcommit a93d6997fafcd03111f5bcd18c526900fc93ff2c[m
+Author: xolodog <losididog@gmail.com>
+Date:   Tue Aug 30 22:53:05 2022 +0800
+
+    '新增16筆記'
+
+[33mcommit 8b5613dbceba5282ac48aecad880a0afe5a75866[m
+Author: xolodog <losididog@gmail.com>
+Date:   Mon Aug 29 21:02:20 2022 +0800
+
+    完成 project 16 - Mouse Shadow
+
+[33mcommit 4083d61dae6b7ff15b69b2a03a8a7ab72f06e093[m
+Author: xolodog <losididog@gmail.com>
+Date:   Sat Aug 27 21:45:15 2022 +0800
+
+    '完成15-LocalStorage'
+
+[33mcommit 10ca95aa06f4437a3966720282b957676e3e37d8[m
+Author: xolodog <losididog@gmail.com>
+Date:   Thu Aug 25 21:50:03 2022 +0800
+
+    完成14-JavaScript References Vs Copying
+
+[33mcommit c0ce420cf843112afd09187f5730efd19292266d[m
+Author: xolodog <losididog@gmail.com>
+Date:   Tue Aug 23 20:03:40 2022 +0800
+
+    完成13-Slide in on Scroll & 筆記
+
+[33mcommit 1a4077e7345ca6a4fad66e8d727b08e13dbb1b23[m
+Author: xolodog <losididog@gmail.com>
+Date:   Sun Aug 21 21:33:48 2022 +0800
+
+    完成project 12
+
+[33mcommit d67c2621adebb11609b735307d69c802d936679b[m
+Author: xolodog <losididog@gmail.com>
+Date:   Wed Aug 17 23:52:13 2022 +0800
+
+    新增project 11 筆記
+
+[33mcommit 4a076604700a451983a862a9deda8c5edcff4972[m
+Author: xolodog <losididog@gmail.com>
+Date:   Sun Aug 14 22:28:38 2022 +0800
+
+    add note file in 11-custom video player
+
+[33mcommit 7ef9743b9a237ef761b3843a0c1dd4e68327de06[m
+Merge: d02431e 515a253
+Author: lsd <lsd@ehk.com.tw>
+Date:   Thu Aug 11 10:33:31 2022 +0800
+
+    Merge branch 'main' of https://github.com/moonydog12/JS30
+
+[33mcommit d02431e2a24244a9f911457162faadac94160b27[m
+Author: lsd <lsd@ehk.com.tw>
+Date:   Thu Aug 11 10:33:15 2022 +0800
+
+    新增01 drum kit 筆記檔案
+
+[33mcommit 515a253bfce39513e6ce21eafce9432ea7ba0a32[m
+Author: xolodog <losididog@gmail.com>
+Date:   Tue Aug 9 21:29:33 2022 +0800
+
+    完成 project 11 - custom html video player
+
+[33mcommit 4a4aee1433fe266766b09fb4bc3dc07acfbb5279[m
+Author: xolodog <losididog@gmail.com>
+Date:   Wed Aug 3 21:20:17 2022 +0800
+
+    新增markdown樣本
+
+[33mcommit 6e0c20a21567bf064485244c2058abcfde06734b[m
+Author: lsd <lsd@ehk.com.tw>
+Date:   Wed Aug 3 09:36:49 2022 +0800
+
+    complete 10 hold shift and check checkboxes
+
+[33mcommit 16d683fd6c4f38e4e1b79a1e0fd4a0d39c6dc0ac[m
+Author: lsd <lsd@ehk.com.tw>
+Date:   Tue Aug 2 14:01:24 2022 +0800
+
+    add 03 CSS variables using Vue.js
+
+[33mcommit 8a3a5f3157119995b9787525066a0d2d5da79e5a[m
+Author: lsd <lsd@ehk.com.tw>
+Date:   Tue Aug 2 10:12:08 2022 +0800
+
+    Complete 09 console tricks
+
+[33mcommit 8c91ea0094afb5007aa27d4301867940ed976d39[m
+Author: lsd <lsd@ehk.com.tw>
+Date:   Mon Aug 1 14:42:11 2022 +0800
+
+    delete finshed html
+
+[33mcommit 54dbbb87e493c958abd27f8dd33f37ed474c8589[m
+Author: lsd <lsd@ehk.com.tw>
+Date:   Mon Aug 1 14:41:22 2022 +0800
+
+    complete 08 have fun with html canvas
+
+[33mcommit 9576d9767e80629e1c3920f6a0f6adf2a4a1baaf[m
+Author: xolodog <losididog@gmail.com>
+Date:   Sun Jul 31 19:24:52 2022 +0800
+
+    remove finished files
+
+[33mcommit 6ef9f4eadb3e33c50480503838222b813dbe3b3d[m
+Author: lsd <lsd@ehk.com.tw>
+Date:   Fri Jul 29 09:56:09 2022 +0800
+
+    Add 02 Js clock project build by Vue
+
+[33mcommit 0710b59da7f4205d78b81cbccffc7083926607fb[m
+Author: lsd <lsd@ehk.com.tw>
+Date:   Fri Jul 29 09:02:54 2022 +0800
+
+    complete 07 Array Cardio Day 2 & readme.md
+
+[33mcommit d97a7ecc9cab07e7ae9e36a85b8c1a28c4e99f15[m
+Author: xolodog <losididog@gmail.com>
+Date:   Wed Jul 27 20:52:49 2022 +0800
+
+    新增drumkit
+
+[33mcommit e981dbc26494c2f93b10bcb3a7ff9a59d19c257a[m
+Author: lsd <lsd@ehk.com.tw>
+Date:   Wed Jul 27 14:06:30 2022 +0800
+
+    新增01 drumkit Vue範例
+
+[33mcommit d0605fc25ad61794739dfb52b957e2c015f9e067[m
+Author: lsd <lsd@ehk.com.tw>
+Date:   Wed Jul 27 10:59:59 2022 +0800
+
+    finish 06 project and fix some readme files
+
+[33mcommit 89990a408ddfb1133aa7e4b806139b72731cf195[m
+Author: lsd <lsd@ehk.com.tw>
+Date:   Tue Jul 26 15:11:06 2022 +0800
+
+    finish 05
+
+[33mcommit f9cf1c726c9333ece6058730ea81b68ed29d87de[m
+Author: lsd <lsd@ehk.com.tw>
+Date:   Tue Jul 26 15:10:10 2022 +0800
+
+    完成 05 project
+
+[33mcommit 5afcbfd29b26d458e852feb94ebb8b7b25331aea[m
+Author: lsd <lsd@ehk.com.tw>
+Date:   Tue Jul 26 11:21:48 2022 +0800
+
+    first commit
