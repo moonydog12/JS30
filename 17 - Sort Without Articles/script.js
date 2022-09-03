@@ -19,6 +19,8 @@ document.querySelector('#bands').innerHTML = sortedBands
   .map((band) => `<li>${band}</li>`)
   .join('');
 
-function strip(bandName) {
-  return bandName.replace(/^(a |the |an )/i, '').trim();
+
+function strip(str) {
+  let regex = new RegExp('^(a |the |an )', 'i');
+  return str.replace(regex, '').trim();
 }

@@ -20,8 +20,8 @@ body {
 }
 
 #bands li {
-  border-bottom: 1px solid #efefef;
-  padding: 20px;
+  border-bottom: 1px solid #cfcfcf;
+  padding: 1rem;
 }
 
 #bands li:last-child {
