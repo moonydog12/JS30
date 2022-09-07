@@ -6,8 +6,8 @@ const seconds = timeNodes
   .map((node) => node.dataset.time)
   .map((timeCode) => {
     /* 
-    let minutes = +timeCode.split(':')[0];
-    let seconds = +timeCode.split(':')[1];
+    let minutes = parseFloat(timeCode.split(':')[0]);
+    let seconds = parseFloat(timeCode.split(':')[1]);
     split()後格式依然是 string，所以要轉成數字方便計算 
     */
     let [minutes, seconds] = timeCode.split(':').map(parseFloat);
