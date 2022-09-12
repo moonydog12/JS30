@@ -4,6 +4,10 @@ const highlight = document.createElement('span');
 highlight.classList.add('highlight');
 document.body.append(highlight);
 
+for (let i = 0; i < triggers.length; i++) {
+  triggers[i].addEventListener('mouseenter', highlightLink);
+}
+
 function highlightLink() {
   const linkCoords = this.getBoundingClientRect();
   let coords = {
@@ -15,8 +19,4 @@ function highlightLink() {
   highlight.style.width = `${coords.width}px`;
   highlight.style.height = `${coords.height}px`;
   highlight.style.transform = `translate(${coords.left}px,${coords.top}px)`;
-}
-
-for (let i = 0; i < triggers.length; i++) {
-  triggers[i].addEventListener('mouseenter', highlightLink);
 }
