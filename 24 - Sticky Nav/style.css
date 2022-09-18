@@ -23,12 +23,8 @@ body {
   padding: 40px;
   text-align: justify;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
-  transform: scale(0.98);
+  transform: scale(0.9);
   transition: transform 0.5s;
-}
-
-.fixed-nav .site-wrap {
-  transform: scale(1.2);
 }
 
 header {
@@ -81,12 +77,6 @@ li.logo {
   font-size: 30px;
 }
 
-.fixed-nav li.logo {
-  /* width auto 無法使用 transition 動畫 */
-  /* width: auto; */
-  max-width: 500px;
-}
-
 li.logo a {
   color: black;
 }
@@ -100,8 +90,17 @@ nav a {
   text-transform: uppercase;
 }
 
+.fixed-nav .site-wrap {
+  transform: scale(1);
+}
+
+.fixed-nav li.logo {
+  /* width auto 無法使用 transition 動畫 */
+  /* width: auto; */
+  max-width: 500px;
+}
+
 .fixed-nav nav {
-  /* fixed 元素離開 document flow (浮起來) */
-  position: fixed;
+  position: fixed; /* element is removed from the normal document flow (浮起來) */
   box-shadow: 0 5px rgba(0, 0, 0, 0.1);
 }

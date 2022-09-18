@@ -3,6 +3,8 @@ const navbar = document.querySelector('#main');
 // 計算出 navbar 距離瀏覽器 viewport 上方的距離
 const topOfNav = navbar.offsetTop;
 
+window.addEventListener('scroll', fixNav);
+
 function fixNav() {
   if (window.scrollY >= topOfNav) {
     // offset fixed navbar height
@@ -13,5 +15,3 @@ function fixNav() {
     document.body.classList.remove('fixed-nav');
   }
 }
-
-window.addEventListener('scroll', fixNav);

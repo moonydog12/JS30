@@ -1,6 +1,6 @@
-# Local-Storage 🎁
+# Local-Storage
 
-## 大綱
+## Abstract
 
 - 使用 localStorage 儲存功能
 - 使用 event delegation ，透過 parent element 監聽行為
