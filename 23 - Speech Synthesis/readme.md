@@ -13,7 +13,7 @@
 
 ### 步驟拆解:
 
-1. 匯入API 
+1. 匯入 API
 
    ```javascript
    const msg = new SpeechSynthesisUtterance();
@@ -23,8 +23,6 @@
    const synth = window.speechSynthesis;
    ```
 
-   
-
 2. 設定語言選單
 
    ```javascript
@@ -32,19 +30,21 @@
      voices = this.getVoices();
      // 將所有語系塞進下拉選單中
      voicesDropdown.innerHTML = voices
-       .filter((voice) => voice.lang.includes('zh') || voice.lang.includes('en'))
+       .filter(
+         (voice) => voice.lang.includes('zh') || voice.lang.includes('en')
+       )
        .map(
          (voice) =>
            `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`
        )
-       .join(''); 
+       .join('');
    }
-   
+
    // 監聽語音清單變更後進行語系清單的更新
    speechSynthesis.addEventListener('voiceschanged', populateVoices);
    ```
 
-3. 監聽rate 及 pitch 更動
+3. 監聽 rate 及 pitch 更動
 
    ```javascript
    function setOption() {
@@ -53,9 +53,7 @@
    }
    ```
 
-   
-
-4. 透過start 及 stop 按鈕開啟及結束
+4. 透過 start 及 stop 按鈕開啟及結束
 
    ```javascript
    function toggle(startOver = true) {
@@ -66,7 +64,7 @@
 
    ### JavaScript 補充
 
-- 透過陣列方法來組成HTML
+- 透過陣列方法來組成 HTML
 
   ```javascript
   // 使用filter篩選出包含zh及en的語系
@@ -77,11 +75,8 @@
   .join('';)
   ```
 
-
-
 ### 參考資料
 
 > [MDN - SpeechSynthesisUtterance ](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance)
 >
 > [MDN - SpeechSynthesis ](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis)
-

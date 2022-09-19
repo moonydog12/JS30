@@ -8,7 +8,7 @@
 
 ### JavaScript
 
-這次的JavaScript比較簡單，就是偵測元素位置，滿足條件式後為<body>新增 `fixed-nav` 類別，然後所有加上 `fixed-nav` 前綴的類別就會觸發相對應的效果。
+這次的 JavaScript 比較簡單，就是偵測元素位置，滿足條件式後為<body>新增 `fixed-nav` 類別，然後所有加上 `fixed-nav` 前綴的類別就會觸發相對應的效果。
 
 **步驟**
 
@@ -66,8 +66,6 @@ li.logo {
 }
 ```
 
- 
-
 **新增樣式 fixed-nav**
 
 ```css
@@ -86,10 +84,6 @@ li.logo {
   max-width: 500px;
 }
 ```
-
-
-
-
 
 ## Summary
 

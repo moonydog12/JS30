@@ -2,28 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>JS clock using Vue</title>
+    <title>JS + CSS Clock</title>
     <link rel="stylesheet" href="./clock.css" />
-    <script defer src="./clock.js"></script>
+    <script defer src="./script.js"></script>
   </head>
   <body>
-    <div class="clock" id="app">
+    <div class="clock">
       <div class="clock-face">
-        <div
-          class="hand hour-hand"
-          :style="transformHandStyle(hourDegrees)"
-        ></div>
-        <div
-          class="hand min-hand"
-          :style="transformHandStyle(minsDegrees)"
-        ></div>
-        <div
-          class="hand second-hand"
-          :style="transformHandStyle(secondsDegrees)"
-        ></div>
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
       </div>
     </div>
   </body>
-  <!-- 引入Vue.js -->
-  <script src="https://unpkg.com/vue@3"></script>
 </html>

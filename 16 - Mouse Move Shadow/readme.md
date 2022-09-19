@@ -7,7 +7,7 @@
 學習到的觀念有:
 
 - 物件解構賦值
-- this指向、event target 在 event handler 的差異
+- this 指向、event target 在 event handler 的差異
 - offset 屬性
 
 ## 筆記內容
@@ -25,7 +25,7 @@
 ```javascript
 const hero = document.querySelector('.hero');
 //欲選取元素是 hero 的 child element，所以可以用hero來選取。
-const text = hero.querySelector('h1'); 
+const text = hero.querySelector('h1');
 
 hero.addEventListener('mousemove', moveShadow);
 
@@ -58,24 +58,24 @@ let { offsetX: offsetXAdjust, offsetY: offsetYAdjust } = event;
 
 ##### **Element 屬性**
 
-- `offsetLeft`、`offsetTop` 回傳目前元素到 HTMLElement.offsetParent 節點( node ) 的距離，單位是pixel。
+- `offsetLeft`、`offsetTop` 回傳目前元素到 HTMLElement.offsetParent 節點( node ) 的距離，單位是 pixel。
 - `offsetWidth`、`offsetHeight` 回傳元素寬高的整數值。
 
 ##### **偵測位置**
 
 - `<h1>`的父層 `.hero`沒有設定寬度，所以`e.target.offsetLeft`會是 `<h1>`左側到`<body>`左側的距離。
-- `offsetX`、`offsetY`是MouseEvent屬性，滑鼠進入`<h1>`元素時，指的是滑鼠到元素外層的距離。
+- `offsetX`、`offsetY`是 MouseEvent 屬性，滑鼠進入`<h1>`元素時，指的是滑鼠到元素外層的距離。
 - 所以要取得滑鼠確切的位置，用 `offsetX`( 滑鼠<->body ) + e.target.offsetLeft( h1<->body )
 
 ```javascript
 if (this !== e.target) {
-    // e.target === <h1> 時，滑鼠在h1上的距離加上h1外圍至body的距離
-    offsetXAdjust += e.target.offsetLeft;
-    offsetYAdjust += e.target.offsetTop;
-  }
+  // e.target === <h1> 時，滑鼠在h1上的距離加上h1外圍至body的距離
+  offsetXAdjust += e.target.offsetLeft;
+  offsetYAdjust += e.target.offsetTop;
+}
 ```
 
-##### **計算textShadow**
+##### **計算 textShadow**
 
 以 text 為中心點，去改變 CSS textShadow 的值。
 
@@ -87,4 +87,3 @@ if (this !== e.target) {
 const xWalk = Math.round((offsetXAdjust / width) * walk - walk / 2);
 const yWalk = Math.round((offsetYAdjust / height) * walk - walk / 2);
 ```
-

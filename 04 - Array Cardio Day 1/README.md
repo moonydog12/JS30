@@ -2,16 +2,13 @@
 
 ## Abstract
 
-Array methods
-
-- filter
-- map
-- sort
-- reduce
+關於 Array 的各種操作。
 
 ## Content
 
-### filter( ) :
+### JavaScript 筆記
+
+**filter( ) :**
 
 filter() 方法會建立一個經指定之函式運算後，由原陣列中通過該函式檢驗之元素所構成的新陣列。
 
@@ -23,11 +20,9 @@ const bornInFifteenArrow = inventors.filter(
 console.table(bornInFifteenArrow);
 ```
 
-> Tip: console.table 比 console.log 適合在瀏覽器呈現表格資料
+> Tip: `console.table`比 `console.log` 適合在瀏覽器呈現表格資料
 
-[MDN doc( filter 方法 )](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-
-### map( ) :
+**map( ) :**
 
 map() 方法會建立一個新的陣列，其內容為原陣列的每一個元素經由回呼函式運算後所回傳的結果之集合。
 
@@ -37,9 +32,7 @@ const fullNames = inventors.map(
 );
 ```
 
-[MDN doc( map 方法 )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-
-### sort( ):
+**sort( ):**
 
 sort() 方法會原地（in place）對一個陣列的所有元素進行排序，並回傳此陣列。排序不一定是穩定的（stable）。預設的排序順序是根據字串的 Unicode 編碼位置（code points）而定。
 
@@ -53,15 +46,11 @@ const ordered = inventors.sort(function (a, b) {
     return -1;
   }
 });
-
+//  Ternary operator 簡化語法
 const orderedTernary = inventors.sort((a, b) => (a.year > b.year ? 1 : -1));
 ```
 
-> Tips: JS Ternary operator 簡化語法
-
-[MDN doc( sort 方法 )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-
-### reduce( ):
+**reduce( ):**
 
 reduce() 方法將一個累加器及陣列中每項元素（由左至右）傳入回呼函式，將陣列化為單一值。
 
@@ -78,4 +67,14 @@ const totalYears = inventors.reduce((total, inventor) => {
 }, 0);
 ```
 
-[MDN doc( reduce 方法 )](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+## Summary
+
+參閱 :
+
+> [MDN doc( filter 方法 )](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+>
+> [MDN doc( map 方法 )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+>
+> [MDN doc( sort 方法 )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+>
+> [MDN doc( reduce 方法 )](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)

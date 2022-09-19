@@ -90,6 +90,7 @@ nav a {
   text-transform: uppercase;
 }
 
+/* <body> 被加上 .fixed-nav 時觸發以下效果 */
 .fixed-nav .site-wrap {
   transform: scale(1);
 }

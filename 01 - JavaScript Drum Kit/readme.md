@@ -6,9 +6,11 @@
 
 按下其他按鍵，會關閉前一個按鍵的特效。
 
-## Contents
+## Content
 
-### Steps
+### JavaScript 筆記
+
+**步驟**
 
 1. 新增 keydown event listener
 
@@ -64,45 +66,47 @@
    }
    ```
 
-### JavaScript 補充
+**element.classList**
 
-- **element.classList**
+這個屬性回傳 element 的 class 值(陣列)，範例用到了 classList 的方法`add()`及`remove()`。如果已經存在/不存在的 className 則會被忽略。
 
-  這個屬性回傳 element 的 class 值(陣列)，範例用到了 classList 的方法`add()`及`remove()`。如果已經存在/不存在的 className 則會被忽略。
+```javascript
+classList.add('aaa', 'bbb', 'ccc'); //新增多個className
+classList.remove('aaa', 'bbb', 'ccc'); //移除多個className
+```
 
-  ```javascript
-  classList.add('aaa', 'bbb', 'ccc'); //新增多個className
-  classList.remove('aaa', 'bbb', 'ccc'); //移除多個className
-  ```
+**HTMLmediaElement(audio)**
 
-  > 參閱：[MDN-Element.classList](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+HTML 的`audio`標籤，在 HTML 放置如下標籤指定音源
 
-- **HTMLmediaElement(audio)**
+```html
+<audio src="sound/a.mp3"></audio>
+```
 
-  HTML 的`audio`標籤，在 HTML 放置如下標籤指定音源
+**Array.from**
 
-  ```html
-  <audio src="sound/a.mp3"></audio>
-  ```
+範例中這段 :
 
-  > 參閱：[MDN-HTMLMediaElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement)
+```javascript
+const keys = Array.from(document.querySelectorAll('.key'));
+```
 
-- **Array.from**
+將一個物件或是字串轉為陣列格式的語法，querySelectorAll 選擇元素回傳的格式是 nodeList，nodeList 和 array 是不同的，nodeList 不能使用 array 內建的 method。使用 Array.form 轉換 nodeList 讓他可以使用 array methods。
 
-  範例中這段
+```javascript
+let testNodeList = document.querySelectAll('.key');
+testNodeList.push('add'); // <--非陣列會報錯TypeError: testNodeList.push is not a function
 
-  ```javascript
-  const keys = Array.from(document.querySelectorAll('.key'));
-  ```
+let testArray = Array.from(testNodeList);
+testArray.push('add'); // <-- 轉為陣列就可以了
+```
 
-  將一個物件或是字串轉為陣列格式的語法，querySelectorAll 選擇元素回傳的格式是 nodeList，nodeList 和 array 是不同的，nodeList 不能使用 array 內建的 method。使用 Array.form 轉換 nodeList 讓他可以使用 array methods。
+## Summary
 
-  ```javascript
-  let testNodeList = document.querySelectAll('.key');
-  testNodeList.push('add'); // <--非陣列會報錯TypeError: testNodeList.push is not a function
+**學習重點**
 
-  let testArray = Array.from(testNodeList);
-  testArray.push('add'); // <-- 轉為陣列就可以了
-  ```
+- 開發人員可以用`data attribute`客製自己需要的屬性。
+- 使用 JavaScript Selector 選擇客製化屬性。
 
-  > 參閱：[MDN-NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
+> 參閱：
+> [MDN-Element.classList](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) > [MDN-HTMLMediaElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement) > [MDN-NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
