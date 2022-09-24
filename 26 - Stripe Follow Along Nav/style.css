@@ -37,6 +37,11 @@ body {
 h2 {
   margin-top: 0;
   padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  background: #019fe9;
 }
 
 nav {
@@ -92,10 +97,6 @@ nav ul {
 
 .trigger-enter .dropdown {
   display: block;
-}
-
-.trigger-enter-active .dropdown {
-  opacity: 1;
 }
 
 .dropdownBackground {

@@ -69,7 +69,7 @@ const totalYears = inventors.reduce((total, inventor) => {
 
 ## Summary
 
-參閱 :
+參閱資料 :
 
 > [MDN doc( filter 方法 )](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 >

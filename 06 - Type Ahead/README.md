@@ -4,21 +4,15 @@
 
 這次 Project 介紹 Fetch api 使用方式，使用 ajax (Asynchronous JavaScript and XML) 的方式來取資料，並依使用者輸入的不同即時顯示搜尋結果，使用到正規表示式來處理字串。
 
-學習內容 :
-
-- Fetch api
-- RegExp object
-- 樣板字面值
-
 ## Content
 
-Fetch( ) :
+### JavaScript 筆記
+
+**Fetch( ) :**
 
 提供了一個能獲取跨網路資源的 web api，回傳格式為[Promise](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Promise)。
 
-[MDN doc](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API)
-
-> 用 fetch 取得資料
+用 fetch 取得資料 :
 
 ```JavaScript
 fetch(endpoint) // 從endpoint變數儲存的網址拿取資料
@@ -29,13 +23,13 @@ fetch(endpoint) // 從endpoint變數儲存的網址拿取資料
   .then((data) => cities.push(...data));
 ```
 
-RegExp( ) :
+**RegExp( ) :**
 
 創造一個正規表示法的物件，用來比對符合自訂規則的文字。
 
 g、i 參數分別表示 global , insensitive，表示比對字串不受大小寫影響
 
-> 處理輸入特定文字後取得特定資料
+處理輸入特定文字後取得特定資料 :
 
 ```JavaScript
 function findMatches(wordToMatch, cities) {
@@ -47,15 +41,12 @@ function findMatches(wordToMatch, cities) {
 }
 ```
 
-[MDN Doc](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-
-樣板字面值 :
+**樣板字面值 :**
 
 比對字串後，需要把結果渲染到瀏覽器上，用 ' ' 或是 " " 來處理 HTML template 比較麻煩。使用樣板字面值 `` 更省時。傳遞的參數可以用 ${value}，帶入。
 
-> 定義查找事件 displayMatches 的內容。
-
 ```JavaScript
+// 定義查找事件 displayMatches 的內容。
 function displayMatches() {
   const matchArray = findMatches(this.value, cities);
   const html = matchArray
@@ -83,4 +74,18 @@ function displayMatches() {
 }
 ```
 
-[MDN Doc](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Template_literals)
+## Summary
+
+學習內容 :
+
+- Fetch api
+- RegExp object
+- 樣板字面值
+
+參閱資料:
+
+> [MDN doc - fetch API](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API)
+>
+> [MDN Doc - RegExp ](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+>
+> [MDN Doc - 樣板字面值](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Template_literals)

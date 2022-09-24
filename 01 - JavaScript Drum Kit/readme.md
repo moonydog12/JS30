@@ -108,5 +108,10 @@ testArray.push('add'); // <-- 轉為陣列就可以了
 - 開發人員可以用`data attribute`客製自己需要的屬性。
 - 使用 JavaScript Selector 選擇客製化屬性。
 
-> 參閱：
-> [MDN-Element.classList](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) > [MDN-HTMLMediaElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement) > [MDN-NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
+> 參閱資料：
+>
+> [MDN-Element.classList](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+>
+> [MDN-HTMLMediaElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement)
+>
+> [MDN-NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)

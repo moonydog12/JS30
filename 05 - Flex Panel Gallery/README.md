@@ -78,7 +78,7 @@ Sample 2 :
 
 **CSS 偽類別**
 
-加在CSS選擇器後面的關鍵字(keyword)，用來指定所選元素特殊狀態時的樣式。
+加在 CSS 選擇器後面的關鍵字(keyword)，用來指定所選元素特殊狀態時的樣式。
 
 這個作品使用了兩個偽類別
 
@@ -107,9 +107,11 @@ Sample 2 :
 
 ```html
 <div class="panel panel5">
-	<p>Life</p> <!-- .panel > *:first-child 選到這個  -->
-	<p>In</p>
-	<p>Motion</p> <!-- .panel > *:last-child 選到這個  -->
+  <p>Life</p>
+  <!-- .panel > *:first-child 選到這個  -->
+  <p>In</p>
+  <p>Motion</p>
+  <!-- .panel > *:last-child 選到這個  -->
 </div>
 ```
 
@@ -121,8 +123,10 @@ Sample 2 :
 - CSS transition 語法
 - JavaScript event listener
 
-參閱
+參閱資料:
 
-> [MDN doc - flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) > [MDN DOC - CSS transition](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+> [MDN doc - flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)
+>
+> [MDN DOC - CSS transition](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
 >
 > [MDN doc - pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)

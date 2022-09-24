@@ -62,6 +62,6 @@ style.padding = '15px';
 - 取得文件根元素(:root)的參照
 - 使用 JS 動態更新 CSS 變數
 
-參閱:
+參閱資料:
 
 > [MDN - setProperty](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty)
