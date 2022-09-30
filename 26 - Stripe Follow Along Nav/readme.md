@@ -47,10 +47,7 @@ function handleEnter() {
   // 設定滑動背景modal的定位與大小
   background.style.setProperty('width', coords.width + 'px');
   background.style.setProperty('height', coords.height + 'px');
-  background.style.setProperty(
-    'transform',
-    `translate(${coords.left}px,${coords.top}px)`
-  );
+  background.style.setProperty('transform', `translate(${coords.left}px,${coords.top}px)`);
 }
 ```
 

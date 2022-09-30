@@ -8,10 +8,7 @@ function handleUpdate() {
   const suffix = this.dataset.sizing || '';
   console.log(this.name);
   // 得到文件根元素(:root)的參照
-  document.documentElement.style.setProperty(
-    `--${this.name}`,
-    this.value + suffix
-  );
+  document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
 }
 
 inputs.forEach((input) => {

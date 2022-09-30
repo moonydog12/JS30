@@ -29,9 +29,7 @@ function logText(e) {
 const blocks = document.querySelectorAll('div');
 const button = document.querySelector('button');
 
-blocks.forEach((block) =>
-  block.addEventListener('click', logText, { capture: false })
-);
+blocks.forEach((block) => block.addEventListener('click', logText, { capture: false }));
 
 button.addEventListener('click', logText, { once: true });
 

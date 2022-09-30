@@ -96,9 +96,7 @@ const bornInFifteen = inventors.filter(function (inventor) {
 // take an array and do sth with that array and return a new array
 // 接收一個陣列作為參數，操作陣列之後回傳一個新的陣列
 // 2. Give us an array of the inventors first and last names
-const fullNames = inventors.map(
-  (inventor) => `${inventor.first} ${inventor.last}`
-);
+const fullNames = inventors.map((inventor) => `${inventor.first} ${inventor.last}`);
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest

@@ -23,9 +23,7 @@
 ```javascript
 const blocks = document.querySelectorAll('div');
 
-blocks.forEach((block) =>
-  block.addEventListener('click', logText, { capture: false })
-);
+blocks.forEach((block) => block.addEventListener('click', logText, { capture: false }));
 
 function logText(e) {
   console.log(this.classList.value);

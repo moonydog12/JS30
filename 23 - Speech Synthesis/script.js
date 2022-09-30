@@ -21,10 +21,7 @@ function populateVoices() {
     // 使用filter篩選出包含zh及en的語系
     .filter((voice) => voice.lang.includes('zh') || voice.lang.includes('en'))
     // 篩選後的array透過map把資料組成html
-    .map(
-      (voice) =>
-        `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`
-    )
+    .map((voice) => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`)
     // 用join來合併且消除原本陣列的逗點
     .join('');
 }

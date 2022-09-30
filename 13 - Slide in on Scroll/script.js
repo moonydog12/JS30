@@ -1,8 +1,7 @@
 const sliderImages = document.querySelectorAll('.slide-in');
 function checkSLide(e) {
   sliderImages.forEach((sliderImage) => {
-    const slideInAt =
-      window.scrollY + window.innerHeight - sliderImage.height / 2; // 圖片一半的位置
+    const slideInAt = window.scrollY + window.innerHeight - sliderImage.height / 2; // 圖片一半的位置
     const imageBottom = sliderImage.offsetTop + sliderImage.height; // 圖片底部位置
     const isHalfShown = slideInAt > sliderImage.offsetTop;
     const isNotScrolledPast = window.scrollY < imageBottom;
