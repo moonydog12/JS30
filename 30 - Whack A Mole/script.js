@@ -7,16 +7,14 @@ let lastHole;
 let timeUp = false;
 let score = 0;
 moles.forEach((mole) => mole.addEventListener('click', bonk));
+
 function bonk(e) {
-  if (!e.isTrusted) {
-    return;
-  }
+  if (!e.isTrusted) return;
   score++;
   this.classList.remove('up');
   scoreBoard.textContent = score;
 }
 
-// 取隨機時間
 function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
@@ -41,10 +39,10 @@ function peep() {
     if (!timeUp) {
       peep();
     }
-  }, 800);
+  }, time);
 }
 
-function startGame(params) {
+function startGame() {
   scoreBoard.textContent = 0;
   timeUp = false;
   score = 0;
