@@ -130,8 +130,8 @@ console.log(factorial(10));
 
 ## Summary
 
-這個範例中使用了遞迴這個進階的 Js 函式用法
+這個範例中使用了遞迴這個進階的 Js 函式用法，遞迴是所有進階演算法的入門磚，所以要找機會熟悉這個概念。
 
-> 參閱
+> 參閱 :
 >
-> [Recursion](https://javascript.info/recursion)
+> [Recursion - javascript.info](https://javascript.info/recursion)
