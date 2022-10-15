@@ -1,12 +1,16 @@
 'use strict';
-const holes = document.querySelectorAll('.hole');
+const gameBoard = document.querySelector('.game');
 const scoreBoard = document.querySelector('.score');
-const moles = document.querySelectorAll('.mole');
+const waves = gameBoard.querySelectorAll('.wave');
+const dolphins = gameBoard.querySelectorAll('.dolphin');
+const startButton = document.querySelector('.startBtn');
 
-let lastHole;
+let lastWave;
 let timeUp = false;
 let score = 0;
-moles.forEach((mole) => mole.addEventListener('click', bonk));
+
+dolphins.forEach((dolphin) => dolphin.addEventListener('click', bonk));
+startButton.addEventListener('click', startGame);
 
 function bonk(e) {
   if (!e.isTrusted) return;
@@ -19,36 +23,38 @@ function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
 
-function randomHole() {
-  const idx = Math.floor(Math.random() * holes.length);
-  const hole = holes[idx];
+function getRandomWave() {
+  const idx = Math.floor(Math.random() * waves.length);
+  const wave = waves[idx];
   // recursion
-  if (hole === lastHole) {
-    return randomHole();
+  if (wave === lastWave) {
+    return getRandomWave();
   }
-  lastHole = hole;
-  return hole;
+  lastWave = wave;
+  return wave;
 }
 
-function peep() {
+function jump() {
   const time = randomTime(200, 1000);
-  const hole = randomHole();
-  hole.classList.add('up');
+  const wave = getRandomWave();
+  wave.classList.add('up');
   setTimeout(() => {
-    hole.classList.remove('up');
+    wave.classList.remove('up');
     if (!timeUp) {
-      peep();
+      jump();
     }
   }, time);
 }
 
 function startGame() {
+  startButton.style.display = 'none';
   scoreBoard.textContent = 0;
   timeUp = false;
   score = 0;
-  peep();
+  jump();
 
   setTimeout(() => {
     timeUp = true;
+    startButton.style.display = 'block';
   }, 10000);
 }

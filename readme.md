@@ -1,23 +1,23 @@
 ﻿# JavaScript Armory
 
-
-
 ## Markdowm template
 
 ```markdown
 # Project Name
-## Abstract
 
-擺放 project 大綱內容。
+## Abstract (主題)
 
-## Content
+介紹這個範例主要的功能
 
-擺放筆記，包含與步驟拆解、語法相關等...內容。
+## Steps (步驟)
 
-## Summary
+紀錄步驟、訓練自己把拆解複雜的功能。
 
-總結 project 重點並附上參閱資料的連結。
+## Content (語法筆記)
+
+擺放程式語法相關。
+
+## Summary (總結)
+
+總結範例重點並附上參閱資料的連結。
 ```
-
-
-
