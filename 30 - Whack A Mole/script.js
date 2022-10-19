@@ -1,4 +1,3 @@
-'use strict';
 const gameBoard = document.querySelector('.game');
 const scoreBoard = document.querySelector('.score');
 const waves = gameBoard.querySelectorAll('.wave');
@@ -9,21 +8,16 @@ let lastWave;
 let timeUp = false;
 let score = 0;
 
-dolphins.forEach((dolphin) => dolphin.addEventListener('click', bonk));
-startButton.addEventListener('click', startGame);
-
-function bonk(e) {
+const bonk = function bonkTheMole(e) {
   if (!e.isTrusted) return;
-  score++;
+  score += 1;
   this.classList.remove('up');
   scoreBoard.textContent = score;
-}
+};
 
-function randomTime(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
+const randomTime = (min, max) => Math.round(Math.random() * (max - min) + min);
 
-function getRandomWave() {
+const getRandomWave = function getWave() {
   const idx = Math.floor(Math.random() * waves.length);
   const wave = waves[idx];
   // recursion
@@ -32,9 +26,9 @@ function getRandomWave() {
   }
   lastWave = wave;
   return wave;
-}
+};
 
-function jump() {
+const jump = function activateSvgJump() {
   const time = randomTime(200, 1000);
   const wave = getRandomWave();
   wave.classList.add('up');
@@ -44,9 +38,9 @@ function jump() {
       jump();
     }
   }, time);
-}
+};
 
-function startGame() {
+const startGame = function startAnewGame() {
   startButton.style.display = 'none';
   scoreBoard.textContent = 0;
   timeUp = false;
@@ -57,4 +51,8 @@ function startGame() {
     timeUp = true;
     startButton.style.display = 'block';
   }, 10000);
-}
+};
+
+// Event Listeners
+dolphins.forEach((dolphin) => dolphin.addEventListener('click', bonk));
+startButton.addEventListener('click', startGame);

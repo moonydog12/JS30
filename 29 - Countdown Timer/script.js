@@ -1,31 +1,34 @@
-'use strict';
 const timerDisplay = document.querySelector('.display__time-left');
 const endTime = document.querySelector('.display__end-time');
 const buttons = document.querySelectorAll('[data-time]');
 let countdown;
 
-buttons.forEach((button) => {
-  button.addEventListener('click', startTimer);
-});
+const displayTimeLeft = (seconds) => {
+  const minutes = Math.floor(seconds / 60);
+  const remainderSeconds = seconds % 60;
+  const display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+  timerDisplay.textContent = display;
+  document.title = display;
+};
 
-document.customForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-  let mins = this.minutes.value;
-  timer(mins * 60);
-  this.reset();
-});
+const displayEndTime = (timestamp) => {
+  const end = new Date(timestamp);
+  const hour = end.getHours();
+  const minutes = end.getMinutes();
+  endTime.textContent = `Be back at ${hour}:${minutes < 10 ? '0' : ''}${minutes}`;
+};
 
-function timer(seconds) {
+const timer = (seconds) => {
   // 清除現有的計時器
   clearInterval(countdown);
 
-  let now = Date.now();
-  let then = now + seconds * 1000;
+  const now = Date.now();
+  const then = now + seconds * 1000;
   displayTimeLeft(seconds);
   displayEndTime(then);
 
   countdown = setInterval(() => {
-    let secondsLeft = Math.round((then - Date.now()) / 1000);
+    const secondsLeft = Math.round((then - Date.now()) / 1000);
     // 檢查是否需要停止執行
     if (secondsLeft < 0) {
       clearInterval(countdown);
@@ -35,25 +38,21 @@ function timer(seconds) {
     // display it
     displayTimeLeft(secondsLeft);
   }, 1000);
-}
+};
 
-function startTimer() {
-  let seconds = parseInt(this.dataset.time);
+const startTimer = function startTimer() {
+  const seconds = parseInt(this.dataset.time, 10);
   timer(seconds);
-}
+};
 
-function displayTimeLeft(seconds) {
-  let minutes = Math.floor(seconds / 60);
-  let remainderSeconds = seconds % 60;
-  let display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
-  timerDisplay.textContent = display;
-  document.title = display;
-  console.log({ minutes, remainderSeconds });
-}
+// Event Listeners
+buttons.forEach((button) => {
+  button.addEventListener('click', startTimer);
+});
 
-function displayEndTime(timestamp) {
-  let end = new Date(timestamp);
-  let hour = end.getHours();
-  let minutes = end.getMinutes();
-  endTime.textContent = `Be back at ${hour}:${minutes < 10 ? '0' : ''}${minutes}`;
-}
+document.customForm.addEventListener('submit', function clickButton(e) {
+  e.preventDefault();
+  const mins = this.minutes.value;
+  timer(mins * 60);
+  this.reset();
+});

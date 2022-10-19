@@ -1,4 +1,3 @@
-'use strict';
 const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
@@ -35,9 +34,7 @@ const checkEmail = (input) => {
 };
 
 // check required fields
-const getFieldName = (input) => {
-  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-};
+const getFieldName = (input) => input.id.charAt(0).toUpperCase() + input.id.slice(1);
 
 const checkRequired = (inputArray) => {
   inputArray.forEach((input) => {
