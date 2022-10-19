@@ -1,17 +1,16 @@
-'use strict';
 const speed = document.querySelector('.speed');
 const speedBar = speed.querySelector('.speed-bar');
 const video = document.querySelector('.flex');
 
-speed.addEventListener('mousemove', handleSpeed);
-
-function handleSpeed(e) {
-  let percent = (e.pageY - this.offsetTop) / this.offsetHeight;
-  let min = 0.4;
-  let max = 4;
-  let height = Math.round(percent * 100) + '%';
-  let playbackRate = percent * (max - min) + min;
+const controlSpeed = function handleSpeed(e) {
+  const percent = (e.pageY - this.offsetTop) / this.offsetHeight;
+  const min = 0.4;
+  const max = 4;
+  const height = `${Math.round(percent * 100)}%`;
+  const playbackRate = percent * (max - min) + min;
   speedBar.style.height = height;
-  speedBar.textContent = playbackRate.toFixed(1) + 'x';
+  speedBar.textContent = `${playbackRate.toFixed(1)}x`;
   video.playbackRate = playbackRate;
-}
+};
+
+speed.addEventListener('mousemove', controlSpeed);

@@ -1,16 +1,15 @@
 const panels = document.querySelectorAll('.panel');
-panels.forEach((panel) => panel.addEventListener('click', toggleOpen));
 
-panels.forEach((panel) => panel.addEventListener('transitionend', toggleActive));
-
-function toggleOpen() {
+const toggleOpen = function openPanel() {
   this.classList.toggle('open');
-}
+};
 
-function toggleActive(e) {
-  console.log(e.propertyName);
+const toggleActive = function activateEffect(e) {
   if (e.propertyName.includes('flex')) {
-    console.log(this);
     this.classList.toggle('active');
   }
-}
+};
+
+// Event Listeners
+panels.forEach((panel) => panel.addEventListener('click', toggleOpen));
+panels.forEach((panel) => panel.addEventListener('transitionend', toggleActive));

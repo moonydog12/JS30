@@ -1,5 +1,3 @@
-'use strict';
-
 // 冒泡 (內向外)
 /*
 const blocks = document.querySelectorAll('div');
@@ -29,14 +27,13 @@ function logText(e) {
 const blocks = document.querySelectorAll('div');
 const button = document.querySelector('button');
 
-blocks.forEach((block) => block.addEventListener('click', logText, { capture: false }));
-
-button.addEventListener('click', logText, { once: true });
-
-function logText(e) {
+const logText = function logText(e) {
   e.stopPropagation(); // 停止冒泡 (stop bubbling)
   if (this.classList.contains('clickOnce')) {
     this.setAttribute('disabled', true);
   }
-  console.log(this.classList.value);
-}
+};
+
+// Event Listeners
+blocks.forEach((block) => block.addEventListener('click', logText, { capture: false }));
+button.addEventListener('click', logText, { once: true });

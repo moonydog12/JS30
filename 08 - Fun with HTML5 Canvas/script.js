@@ -17,18 +17,6 @@ let lastY = 0;
 let hue = 0;
 let direction = true;
 
-canvas.addEventListener('mousedown', (e) => {
-  isDrawing = true;
-  // 每次按下滑鼠都重設筆畫起點
-  [lastX, lastY] = [e.offsetX, e.offsetY];
-});
-
-canvas.addEventListener('mousemove', draw);
-
-canvas.addEventListener('mouseup', () => (isDrawing = false));
-
-canvas.addEventListener('mouseout', () => (isDrawing = false));
-
 function draw(e) {
   // 監控滑鼠行為
   if (!isDrawing) {
@@ -47,17 +35,32 @@ function draw(e) {
   lastX = e.offsetX;
   lastY = e.offsetY;
   // 每次 draw fn 結束後增加 hue色階
-  hue++;
+  hue += 1;
   while (hue > 360) {
     hue = 0;
   }
   if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
     direction = !direction;
   }
+  // direction ? (ctx.lineWidth += 1) : (ctx.lineWidth -= 1);
   if (direction) {
-    ctx.lineWidth++;
+    ctx.lineWidth += 1;
   } else {
-    ctx.lineWidth--;
+    ctx.lineWidth -= 1;
   }
-  direction ? ctx.lineWidth++ : ctx.lineWidth--;
 }
+
+const isNotDrawing = function notClickMouse() {
+  isDrawing = false;
+};
+
+// Event Listeners
+canvas.addEventListener('mousedown', (e) => {
+  isDrawing = true;
+  // 每次按下滑鼠都重設筆畫起點
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+});
+
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', isNotDrawing);
+canvas.addEventListener('mouseout', isNotDrawing);

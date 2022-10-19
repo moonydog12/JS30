@@ -2,7 +2,7 @@
 
 ## Abstract
 
-學習HTML video API，並做出一個客製化的影片撥放器。
+學習 HTML video API，並做出一個客製化的影片撥放器。
 
 功能包含
 
@@ -17,7 +17,7 @@
 
 1. 選取元素
 
-2. 實作function
+2. 實作 function
 
    - 點擊螢幕或按鈕，出現暫停/播放效果
 
@@ -25,7 +25,7 @@
 
    - 音量控制、速率控制
 
-   - 進度bar拉放效果
+   - 進度 bar 拉放效果
 
 3. 元素新增 event listener 連結 function
 
@@ -51,7 +51,7 @@
 
 #### HTML video element
 
-video element 提供一些屬性，可以使用JS操作。
+video element 提供一些屬性，可以使用 JS 操作。
 
 ```javascript
 const video = document.querySelector('video');
@@ -108,7 +108,7 @@ skipButtons.forEach((button) => button.addEventListener('click', skip));
 
 #### 調整音量/速度
 
- `video.volume` 和 `video.playbackRate` 來控制播放的音量（0~1）和播放速度（預設是 1.0）：
+`video.volume` 和 `video.playbackRate` 來控制播放的音量（0~1）和播放速度（預設是 1.0）：
 
 ```javascript
 function handleRangeUpdate() {
@@ -148,11 +148,3 @@ progress.addEventListener('mousemove', (e) => mouseDown && scrub(e));
 progress.addEventListener('mousedown', () => (mouseDown = true));
 progress.addEventListener('mouseup', () => (mouseDown = false));
 ```
-
-
-
-
-
-
-
- 

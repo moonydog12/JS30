@@ -27,9 +27,7 @@ console.table(bornInFifteenArrow);
 map() 方法會建立一個新的陣列，其內容為原陣列的每一個元素經由回呼函式運算後所回傳的結果之集合。
 
 ```javascript
-const fullNames = inventors.map(
-  (inventor) => `${inventor.first} ${inventor.last}`
-);
+const fullNames = inventors.map((inventor) => `${inventor.first} ${inventor.last}`);
 ```
 
 **sort( ):**

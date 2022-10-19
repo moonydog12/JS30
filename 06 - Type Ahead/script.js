@@ -5,18 +5,15 @@ const cities = [];
 const searchInput = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
 
-searchInput.addEventListener('change', displayMatches);
-searchInput.addEventListener('keyup', displayMatches);
 // fetch API
 fetch(endpoint)
-  .then((blob) => {
-    console.log(blob);
-    return blob.json();
-  })
+  .then((blob) => blob.json())
   .then((data) => cities.push(...data));
 
-function findMatches(wordToMatch, cities) {
-  return cities.filter((place) => {
+const numberWithCommas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+function findMatches(wordToMatch, matchedCities) {
+  return matchedCities.filter((place) => {
     // 確認city || state 符合搜尋字串
     const regex = new RegExp(wordToMatch, 'gi');
     return place.city.match(regex) || place.state.match(regex);
@@ -50,6 +47,5 @@ function displayMatches() {
   suggestions.innerHTML = html;
 }
 
-function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);

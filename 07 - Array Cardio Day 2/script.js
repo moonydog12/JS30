@@ -1,5 +1,4 @@
 // ## Array Cardio Day 2
-'use strict';
 const people = [
   { name: 'Wes', year: 1988 },
   { name: 'Kait', year: 1986 },
@@ -17,11 +16,9 @@ const comments = [
 
 // Some and Every Checks
 // Array.prototype.some() // is at least one person 19 or older?
-const isAdult = people.some(function (person) {
+const isAdult = people.some((person) => {
   const currentYear = new Date().getFullYear();
-  if (currentYear - person.year >= 19) {
-    return true;
-  }
+  return currentYear - person.year >= 19;
 });
 // Arrow Fn
 const isAdultArrow = people.some((person) => new Date().getFullYear() - person.year >= 19);
@@ -34,6 +31,5 @@ const matchedComment = comments.find((comment) => comment.id === 823423);
 // Array.prototype.findIndex()
 // Find the comment with this ID
 // delete the comment with the ID of 823423
-let index = comments.findIndex((comment) => comment.id === 823423);
+const index = comments.findIndex((comment) => comment.id === 823423);
 comments.splice(index, 1);
-console.log(comments);

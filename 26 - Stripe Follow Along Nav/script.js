@@ -1,11 +1,6 @@
-'use strict';
 const triggers = document.querySelectorAll('.cool>li');
 const background = document.querySelector('.dropdownBackground');
 const nav = document.querySelector('.top');
-
-triggers.forEach((trigger) => trigger.addEventListener('mouseenter', handleEnter));
-
-triggers.forEach((trigger) => trigger.addEventListener('mouseleave', handleLeave));
 
 function handleEnter() {
   this.classList.add('trigger-enter');
@@ -28,11 +23,14 @@ function handleEnter() {
     left: dropdownCords.left - navCords.left,
   };
 
-  background.style.setProperty('width', coords.width + 'px');
-  background.style.setProperty('height', coords.height + 'px');
+  background.style.setProperty('width', `${coords.width}px`);
+  background.style.setProperty('height', `${coords.height}px`);
   background.style.setProperty('transform', `translate(${coords.left}px,${coords.top}px)`);
 }
 function handleLeave() {
   this.classList.remove('trigger-enter', 'trigger-enter-active');
   background.classList.remove('open');
 }
+
+triggers.forEach((trigger) => trigger.addEventListener('mouseenter', handleEnter));
+triggers.forEach((trigger) => trigger.addEventListener('mouseleave', handleLeave));

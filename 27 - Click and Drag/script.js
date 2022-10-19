@@ -1,13 +1,11 @@
-'use strict';
 const itemsBlock = document.querySelector('.items');
-const items = document.querySelectorAll('.item');
-let isDown = false; //判斷是否按住滑鼠
+let isDown = false; // 判斷是否按住滑鼠
 let startX;
 let scrollLeft;
 
 // 動態生成html元素
 for (let i = 1; i <= 25; i++) {
-  let div = document.createElement('div');
+  const div = document.createElement('div');
   div.setAttribute('class', `item item${i}`);
   div.textContent = i;
   itemsBlock.append(div);
@@ -33,7 +31,7 @@ itemsBlock.addEventListener('mouseup', () => {
 itemsBlock.addEventListener('mousemove', (e) => {
   if (!isDown) return;
   e.preventDefault();
-  let x = e.pageX - itemsBlock.offsetLeft;
-  let walk = (x - startX) * 2;
+  const x = e.pageX - itemsBlock.offsetLeft;
+  const walk = (x - startX) * 2;
   itemsBlock.scrollLeft = scrollLeft - walk;
 });

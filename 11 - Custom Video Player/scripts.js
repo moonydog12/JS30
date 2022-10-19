@@ -8,7 +8,11 @@ const skipButtons = player.querySelectorAll('[data-skip]');
 const ranges = player.querySelectorAll('.player__slider');
 // Build out functions
 function togglePlay() {
-  video.paused ? video.play() : video.pause();
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
 }
 
 function updateButton() {
@@ -17,7 +21,6 @@ function updateButton() {
 }
 
 function skip() {
-  console.log(this.dataset.skip);
   video.currentTime += parseFloat(this.dataset.skip);
 }
 
@@ -47,5 +50,9 @@ ranges.forEach((range) => range.addEventListener('change', handleRangeUpdate));
 let mouseDown = false;
 progress.addEventListener('click', scrub);
 progress.addEventListener('mousemove', (e) => mouseDown && scrub(e));
-progress.addEventListener('mousedown', () => (mouseDown = true));
-progress.addEventListener('mouseup', () => (mouseDown = false));
+progress.addEventListener('mousedown', () => {
+  mouseDown = true;
+});
+progress.addEventListener('mouseup', () => {
+  mouseDown = false;
+});

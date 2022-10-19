@@ -1,4 +1,3 @@
-'use strict';
 const msg = new SpeechSynthesisUtterance();
 const synth = window.speechSynthesis;
 let voices = [];
@@ -40,8 +39,6 @@ function toggle(startOver = true) {
 
 // 設定速率跟音準
 function setOption() {
-  console.log(this.name);
-  console.log(this.value);
   msg[this.name] = this.value;
   toggle();
 }
