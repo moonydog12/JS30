@@ -5,7 +5,7 @@ const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
 // Functions
-// show error message
+// Show error message while field doesn't pass the validation
 const showError = (input, message) => {
   const formControl = input.parentElement;
   formControl.classList.add('error');
@@ -13,15 +13,14 @@ const showError = (input, message) => {
   span.textContent = message;
 };
 
-// show success outline
+// Show success outline while field pass the validation
 const showSuccess = (input) => {
   const formControl = input.parentElement;
   formControl.classList.remove('error');
   formControl.classList.add('success');
 };
 
-// check email
-
+// Check email is valid or not
 const checkEmail = (input) => {
   const regex =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -33,11 +32,11 @@ const checkEmail = (input) => {
   }
 };
 
-// check required fields
+// Check required fields
 const getFieldName = (input) => input.id.charAt(0).toUpperCase() + input.id.slice(1);
 
-const checkRequired = (inputArray) => {
-  inputArray.forEach((input) => {
+const checkRequired = (inputs) => {
+  inputs.forEach((input) => {
     if (input.value.trim() === '') {
       showError(input, `${getFieldName(input)} is required`);
     } else {
@@ -46,7 +45,7 @@ const checkRequired = (inputArray) => {
   });
 };
 
-// check input length
+// Check input length
 const checkLength = (input, min, max) => {
   if (input.value.length < min) {
     showError(input, `${getFieldName(input)} must be at least ${min} characters`);
@@ -57,7 +56,7 @@ const checkLength = (input, min, max) => {
   }
 };
 
-// check password match
+// Check two password fields are matched
 const checkPasswordMath = (input1, input2) => {
   if (input1.value !== input2.value) {
     showError(input2, 'Password do not match');
