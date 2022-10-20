@@ -1,5 +1,7 @@
 # Sticky Navbar
 
+![image](../assets/image/glue.jpg)
+
 ## Abstract
 
 透過 JavaScript & CSS 的`position:fixed` 製作置頂選單( Navbar )。

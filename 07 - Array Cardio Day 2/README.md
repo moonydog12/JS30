@@ -1,5 +1,7 @@
 # Array Cardio Day 2
 
+![image](../assets/image/queue2.jpg)
+
 ## Abstract
 
 學習新的 Array methods
@@ -11,9 +13,7 @@
 > 查詢陣列內是否有人成年
 
 ```javascript
-const isAdultArrow = people.some(
-  (person) => new Date().getFullYear() - person.year >= 19
-);
+const isAdultArrow = people.some((person) => new Date().getFullYear() - person.year >= 19);
 ```
 
 - every( ) : 測試陣列中的所有元素是否都通過了函式條件。
@@ -21,9 +21,7 @@ const isAdultArrow = people.some(
 > 查詢陣列內是否皆為成年。
 
 ```javascript
-const isEveryAdult = people.every(
-  (person) => new Date().getFullYear() - person.year >= 19
-);
+const isEveryAdult = people.every((person) => new Date().getFullYear() - person.year >= 19);
 ```
 
 - find( ) : 類似 filter( )，但是 filter( )會回傳全部符合的項目，find( )則回傳單一項目。

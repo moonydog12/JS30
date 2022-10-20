@@ -1,5 +1,7 @@
 # Click and Drag
 
+![image](../assets/image/scroll.jpg)
+
 ## Abstract
 
 製作一個可以使用滑鼠水平拖曳的卷軸效果。

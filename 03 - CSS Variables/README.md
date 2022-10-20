@@ -1,5 +1,7 @@
 # 用 JavaScript 更新 CSS 變數
 
+![image](../assets/image/filter.jpg)
+
 ## Abstract
 
 用 JS & CSS 製作即時<img>濾鏡， 可以調整內距、模糊、邊框顏色。

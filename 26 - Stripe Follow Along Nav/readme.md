@@ -1,5 +1,7 @@
 # Stripe follow along nav
 
+![image](../assets/image/stripe.jpg)
+
 ## Abstract
 
 利用 JavaScript & CSS 動畫製作選單特效，當滑鼠移動至超連結下方，會呈現預先製作的背景版及連結內容。

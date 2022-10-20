@@ -1,5 +1,7 @@
 # Sort Without Articles
 
+![image](../assets/image/sort.jpg)
+
 ## 大綱
 
 這次的 project 複習一些之前學過的 array methods，以及使用正規表示法篩選字元。

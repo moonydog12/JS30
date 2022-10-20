@@ -1,5 +1,7 @@
 # Array Cardio Day 1
 
+![image](../assets/image/queue.jpg)
+
 ## Abstract
 
 關於 Array 的各種操作。

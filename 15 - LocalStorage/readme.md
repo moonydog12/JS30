@@ -1,5 +1,7 @@
 # Local-Storage
 
+![image](../assets/image/storage.jpg)
+
 ## Abstract
 
 - 使用 localStorage 儲存功能
@@ -28,21 +30,19 @@
 }
 ```
 
-
-
 ### JavaScript
 
 #### **步驟**
 
-1. 把資料存入localStorage
+1. 把資料存入 localStorage
 2. populateList 渲染畫面
 3. toggleDone 改變資料的狀態
 
 #### **使用 localStorage 儲存資料**
 
-可以使用localStorage保存資料(本地端容量約為5MB)，要注意如果把瀏覽器快取清除，儲存資料也會一併消失，另外資料可以在 chrome dev tool 的 application 查看，所以安全性較低。
+可以使用 localStorage 保存資料(本地端容量約為 5MB)，要注意如果把瀏覽器快取清除，儲存資料也會一併消失，另外資料可以在 chrome dev tool 的 application 查看，所以安全性較低。
 
- localStorage 的 API：
+localStorage 的 API：
 
 ```javascript
 localStorage.setItem('<keyName>', '<value>'); // 儲存到 localStorage
@@ -60,20 +60,20 @@ function addItem(e) {
   e.preventDefault(); // 關閉表單預設行為
   let text = this.querySelector('input').value;
   let item = {
-    text, 
+    text,
     done: false,
   };
   items.push(item);
   localStorage.setItem('items', JSON.stringify(items));
-  this.reset();  // 使用reset() method清空表單
+  this.reset(); // 使用reset() method清空表單
 }
 ```
 
-localStorage資料儲存格式是 `key: value` paired，但是只能儲存字串，所以要先使用`JSON.stringify()` 把物件格式轉成JSON字串。
+localStorage 資料儲存格式是 `key: value` paired，但是只能儲存字串，所以要先使用`JSON.stringify()` 把物件格式轉成 JSON 字串。
 
 #### **渲染畫面**
 
-把陣列轉換成HTML DOM
+把陣列轉換成 HTML DOM
 
 code block :
 
@@ -86,9 +86,7 @@ function populateList(plates = [], platesList) {
     .map((plate, i) => {
       return `
       <li>
-      <input type="checkbox" data-index="${i}" id="item${i}" ${
-        plate.done ? 'checked' : null
-      } />
+      <input type="checkbox" data-index="${i}" id="item${i}" ${plate.done ? 'checked' : null} />
       <label for="item${i}">${plate.text}</label>
     </li>
       `;
@@ -97,11 +95,9 @@ function populateList(plates = [], platesList) {
 }
 ```
 
-
-
 #### **改變資料狀態 (Event Delegation)**
 
-希望在點選checkbox同時可以同步切換 localStorage 的資料狀態。
+希望在點選 checkbox 同時可以同步切換 localStorage 的資料狀態。
 
 原本會採取的作法是把元素綁定事件
 
@@ -129,4 +125,3 @@ function toggleDone(e) {
   populateList(items, itemsList);
 }
 ```
-

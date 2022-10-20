@@ -1,5 +1,7 @@
 # Key sequence detection
 
+![image](../assets/image/key.jpg)
+
 ## Abstract
 
 偵測使用者鍵盤輸入，當輸入字串等於先前設定的密碼時，觸發特定效果。
@@ -41,9 +43,7 @@
   window.addEventListener('keyup', (e) => {
     // 擷取使用者最後輸入按鍵
     pressedKeys.push(e.key);
-    let keySecret = pressedKeys
-      .slice(-secretCode.length, pressedKeys.length)
-      .join('');
+    let keySecret = pressedKeys.slice(-secretCode.length, pressedKeys.length).join('');
     // something ...
   });
   ```

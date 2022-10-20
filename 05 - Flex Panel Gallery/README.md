@@ -1,5 +1,7 @@
 # Flex Panels Image Gallery
 
+![image](../assets/image/flex-pannel.jpg)
+
 ## Abstract
 
 製作一個點擊圖片後會展開的展示效果。比起 JavaScript ， 這個小作品更著重 CSS 的應用。
@@ -19,9 +21,7 @@
 函式會在 transition 動畫結束後觸發。
 
 ```javascript
-panels.forEach((panel) =>
-  panel.addEventListener('transitionend', toggleActive)
-);
+panels.forEach((panel) => panel.addEventListener('transitionend', toggleActive));
 ```
 
 `e.propertyName` 可以取得觸發 `transitionend` 而改變的屬性名稱，而 `.open` 觸發的屬性有 `font-size` 、 `flex`。所以要使用判斷式來判斷進來的是不是`flex。
@@ -53,8 +53,8 @@ Sample 1 :
 ```css
 .panel {
   /* 設定動畫改變的屬性 */
-  transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), flex 0.7s
-      cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s;
+  transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    background 0.2s;
 }
 
 .panel.open {

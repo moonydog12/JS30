@@ -1,4 +1,6 @@
-# Custom HTML video player 🎞
+# Custom HTML video player
+
+![image](../assets/image/video-player.jpg)
 
 ## Abstract
 

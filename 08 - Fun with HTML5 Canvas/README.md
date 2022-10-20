@@ -1,4 +1,6 @@
-# Fun with HTML5 Canvas 🖼️
+# Fun with HTML5 Canvas
+
+![image](../assets/image/canvas.jpg)
 
 ## Abstract
 

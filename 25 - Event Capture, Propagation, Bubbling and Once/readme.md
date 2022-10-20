@@ -1,5 +1,7 @@
 # Event Capture, Propagation, Bubbling
 
+![image](../assets/image/bubble.jpg)
+
 ## Abstract
 
 透過實例展示`Web API`事件傳遞機制，包含捕獲(Capture)、冒泡(bubbling)，以及 addEventListener 可使用的參數。

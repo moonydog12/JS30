@@ -1,5 +1,7 @@
 # Mouse Shadow effect
 
+![image](../assets/image/mouse.jpg)
+
 ## 大綱
 
 練習實作出文字陰影跟哲滑鼠移動的效果。

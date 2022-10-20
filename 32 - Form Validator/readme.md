@@ -158,8 +158,8 @@ The `:root` CSS pseudo-class matches the root element of a tree representing the
 
 Reference :
 
-> [:root](https://developer.mozilla.org/en-US/docs/Web/CSS/:root)
+> [MDN - :root](https://developer.mozilla.org/en-US/docs/Web/CSS/:root)
 >
-> [String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+> [MDN - String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
 
 [email]: (https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript)

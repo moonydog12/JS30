@@ -1,5 +1,7 @@
 # Tally String Times with Reduce
 
+![image](../assets/image/hourglass.jpg)
+
 ## 大綱
 
 練習使用 array method 來加總時間。
@@ -10,7 +12,7 @@
 
 #### **NodeList 轉換成 Array**
 
-專案中可能會遇到需要計算影片總長度，這個專案把影片長度寫死在自訂的HTML `data` attribute，現實可能會使用 JS 去選擇元素裡面的字串。
+專案中可能會遇到需要計算影片總長度，這個專案把影片長度寫死在自訂的 HTML `data` attribute，現實可能會使用 JS 去選擇元素裡面的字串。
 
 抓取 HTML attribute 裡面的字串 (方法二擇一) :
 
@@ -27,7 +29,7 @@ const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
 
 不使用解構 :
 
-array.split 之後，格式還是 string，所以要轉成數字。 
+array.split 之後，格式還是 string，所以要轉成數字。
 
 ```javascript
 let minutes = parseFloat(timeCode.split(':')[0]);
@@ -51,11 +53,9 @@ const seconds = timeNodes
     let [minutes, seconds] = timeCode.split(':').map(parseFloat);
     return minutes * 60 + seconds;
   })
-   // 累加陣列中所有秒數
+  // 累加陣列中所有秒數
   .reduce((total, vidSeconds) => total + vidSeconds);
 ```
-
-
 
 > 參閱 [MDN - Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
 
@@ -65,7 +65,7 @@ const seconds = timeNodes
 
 ```html
 <ul class="videos">
-      <li data-time="52:40">Video 1</li>
+  <li data-time="52:40">Video 1</li>
 </ul>
 ```
 
@@ -75,6 +75,3 @@ const seconds = timeNodes
 let li = document.querySelector('li');
 console.log(li.dataset.time); // "52:40"
 ```
-
-
-

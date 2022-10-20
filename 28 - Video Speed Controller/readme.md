@@ -1,4 +1,6 @@
-# Video Speed Controller 📱
+# Video Speed Controller
+
+![image](../assets/image/speed.jpg)
 
 ## Abstract
 

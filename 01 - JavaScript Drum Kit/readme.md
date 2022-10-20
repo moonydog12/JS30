@@ -1,5 +1,7 @@
 # 01 - JavaScript Drum Kit
 
+![image](../assets/image/drumKit.jpg)
+
 ## Abstract
 
 透過 JavaScript 使鍵盤按下後播放出對應按鍵的聲音，並同時產生一個特效。

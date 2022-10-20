@@ -1,4 +1,6 @@
-# Whack A Mole 🐬
+# Whack A Mole
+
+![image](../assets/image/dolphin.jpg)
 
 ## Abstract
 

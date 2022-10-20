@@ -1,5 +1,7 @@
 # Follow Along Link Highlighter
 
+![image](../assets/image/follow.jpg)
+
 ## 大綱
 
 使用 `getBoundingClientRect` web API 結合 CSS transform ，實作出反白樣式跟著滑鼠移動。

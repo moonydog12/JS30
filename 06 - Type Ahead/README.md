@@ -1,5 +1,7 @@
 # Ajax Type Ahead
 
+![image](../assets/image/type-ahead.jpg)
+
 ## Abstract
 
 這次 Project 介紹 Fetch api 使用方式，使用 ajax (Asynchronous JavaScript and XML) 的方式來取資料，並依使用者輸入的不同即時顯示搜尋結果，使用到正規表示式來處理字串。

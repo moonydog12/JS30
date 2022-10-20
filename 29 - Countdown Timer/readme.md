@@ -1,4 +1,6 @@
-# Countdown timer ⏰
+# Countdown timer
+
+![image](../assets/image/countdownTimer.jpg)
 
 ## Abstract
 

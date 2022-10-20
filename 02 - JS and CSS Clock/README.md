@@ -1,5 +1,7 @@
 # JavaScript 時鐘
 
+![image](../assets/image/clock.jpg)
+
 ## Abstract
 
 使用 JavaScript & CSS 動畫效果實作簡易時鐘。

@@ -1,5 +1,7 @@
 # Hold Shift and Check Checkboxes
 
+![image](../assets/image/shift.jpg)
+
 ## Abstract
 
 實作點擊 checkbox 之後按下 shift 鍵，一次選取多個 checkbox 的功能。

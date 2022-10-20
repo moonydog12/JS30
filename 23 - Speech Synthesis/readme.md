@@ -1,5 +1,7 @@
 # SpeechSynthesis
 
+![image](../assets/image/speech.jpg)
+
 ## 大綱
 
 使用 Web Speech API 中的 `SpeechSynthesis` 實作瀏覽器說話功能，另外透過 DOM 來操控語速、音高。
@@ -30,13 +32,8 @@
      voices = this.getVoices();
      // 將所有語系塞進下拉選單中
      voicesDropdown.innerHTML = voices
-       .filter(
-         (voice) => voice.lang.includes('zh') || voice.lang.includes('en')
-       )
-       .map(
-         (voice) =>
-           `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`
-       )
+       .filter((voice) => voice.lang.includes('zh') || voice.lang.includes('en'))
+       .map((voice) => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`)
        .join('');
    }
 
