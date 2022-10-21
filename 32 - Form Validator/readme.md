@@ -4,7 +4,7 @@
 
 ## Abstract
 
-Use JavaScript to validate form elements and input fields at front-end.
+Use JavaScript to validate form elements and input fields at the front end.
 
 ## Steps
 
@@ -14,7 +14,7 @@ Use JavaScript to validate form elements and input fields at front-end.
    - Verify email is valid or not
    - Verify required fields are filled
    - Verify input lengths
-   - Verify two password are matched
+   - Verify two passwords are matched
 3. Hook functions to event listeners
 
 ## Note
@@ -33,7 +33,7 @@ const showSuccess = (input) => {
 };
 ```
 
-The function naming explained itself, and the codes aren't complicated. The function took input element as parameter and add CSS effects to it.
+The function naming explained itself, and the codes aren't complicated. The function took the input element as a parameter and add CSS effects to it.
 
 **Verify email :**
 
@@ -51,7 +51,7 @@ const checkEmail = (input) => {
 };
 ```
 
-The formula of email validation could be found [here][email] .
+The formula for email validation could be found [here](https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript) .
 
 **Verify required fields :**
 
@@ -87,7 +87,7 @@ const checkLength = (input, min, max) => {
 };
 ```
 
-The function took three parameters, `min` and `max` defined the minimum and maximum length of the `input` parameter.
+The function took three parameters, `min` and `max` defining the minimum and maximum length of the `input` parameter.
 
 **Verify two password fields are matched**
 
@@ -132,7 +132,7 @@ form.addEventListener('submit', (e) => {
 }
 ```
 
-The `:root` CSS pseudo-class matches the root element of a tree representing the document. And we could store variables in it.
+The `root` CSS pseudo-class matches the root element of a tree representing the document. And we could store variables in it.
 
 **display & visibility**
 
@@ -148,11 +148,11 @@ The `:root` CSS pseudo-class matches the root element of a tree representing the
 }
 ```
 
-`display: none` remove the element from the document flow. and it will collapse other elements around it. If you just want element to disappear rather than remove it , use `visibility`.
+`display: none` remove the element from the document flow. and it will collapse other elements around it. If you just want the element to disappear rather than remove it, use `visibility`.
 
 ## Summary
 
-- Use regular expression to verify string.
+- Use regular expression to verify the string.
 - Manipulate string use `charAt()` & `slice()` method.
 - Some useful CSS tips (variables and display)
 
@@ -161,5 +161,3 @@ Reference :
 > [MDN - :root](https://developer.mozilla.org/en-US/docs/Web/CSS/:root)
 >
 > [MDN - String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-
-[email]: (https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript)
