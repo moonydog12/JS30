@@ -152,7 +152,7 @@ The `root` CSS pseudo-class matches the root element of a tree representing the 
 
 ## Summary
 
-- Use regular expression to verify the string.
+- Use regular expressions to verify the string.
 - Manipulate string use `charAt()` & `slice()` method.
 - Some useful CSS tips (variables and display)
 

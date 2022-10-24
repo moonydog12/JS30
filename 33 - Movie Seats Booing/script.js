@@ -65,3 +65,6 @@ container.addEventListener('click', (e) => {
 // Initial count and total set
 populateUI();
 updateCountAndTotal();
+const seats = document.querySelectorAll('.container .seat:not(.occupied)');
+
+seats.forEach((seat) => {});
