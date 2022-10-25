@@ -24,6 +24,8 @@ const updateCountAndTotal = () => {
   const selectedSeatsCount = selectedSeats.length;
   count.textContent = selectedSeatsCount;
   total.textContent = ticketPrice * selectedSeatsCount;
+
+  setMovieData(movieSelect.selectedIndex, movieSelect.value);
 };
 // Get data from localStorage & populate UI
 const populateUI = () => {
@@ -61,5 +63,5 @@ container.addEventListener('click', (e) => {
 });
 
 // Initial count and total set
-updateCountAndTotal();
 populateUI();
+updateCountAndTotal();
