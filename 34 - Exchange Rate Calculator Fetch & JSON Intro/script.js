@@ -5,6 +5,23 @@ const amountTwo = document.querySelector('#amount-two');
 
 const rateEl = document.querySelector('#rate');
 const swapBtn = document.querySelector('#swap');
+const countries = ['HKD', 'JPY', 'TWD', 'USD'];
+
+// Functions
+// Generate UI
+countries.forEach((country) => {
+  const optionEl = document.createElement('option');
+  optionEl.setAttribute('name', country);
+  optionEl.innerText = country;
+  currencyOne.append(optionEl);
+});
+
+countries.forEach((country) => {
+  const optionEl = document.createElement('option');
+  optionEl.setAttribute('name', country);
+  optionEl.innerText = country;
+  currencyTwo.append(optionEl);
+});
 
 // Fetch exchange rates and update DOM
 const calculateRate = async () => {
