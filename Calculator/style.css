@@ -1,11 +1,10 @@
 /* Minimal reset */
 :root {
-  --calculator: #302e2f;
-  --screen: #d4e2e3;
-  --digit: #68635d;
-  --function: #ba8153;
-  --operator: #444243;
-  --green: #a9b576;
+  --primary: #242423;
+  --secondary: #333533;
+  --light-white: #e8eddf;
+  --dark-white: #cfdbd5;
+  --yellow: #f5cb5c;
 }
 
 html {
@@ -39,7 +38,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f6f6f6;
+  background-color: var(--dark-white);
 }
 
 button {
@@ -54,27 +53,33 @@ button {
 /* Calculator */
 
 #calculator {
-  background-color: var(--calculator);
-  border: 6px solid var(--green);
-  border-radius: 5px;
-  padding: 20px;
+  background-color: var(--primary);
+  border: 10px solid var(--secondary);
+  border-radius: 24px;
+  border-top-left-radius: 48px;
+  border-top-right-radius: 48px;
+  padding: 1.8rem;
   width: 40rem;
 }
 
+/* Screens */
 #display {
-  background-color: var(--screen);
-  height: 8.5rem;
-  padding: 0 10px;
-  font-size: 3.6rem;
-  font-weight: 500;
+  background-color: var(--light-white);
+  padding: 10px;
+  height: 9rem;
   font-family: 'Orbitron';
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  border: 2px solid #fff;
-  margin-bottom: 24px;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 2.4rem;
 }
-
+.main-screen {
+  font-size: 36px;
+}
+.sub-screen {
+  min-height: 20%;
+  font-size: 18px;
+}
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -89,10 +94,10 @@ button {
 
 .buttons > button,
 .function-btn {
-  padding: 18px;
+  padding: 16px;
   border: 2px solid #fff;
   border-radius: 10px;
-  font-size: 25px;
+  font-size: 24px;
 }
 
 .function {
@@ -104,25 +109,23 @@ button {
 .function-btn {
   background-color: var(--function);
   padding: 0px 10px;
-  font-family: 'Jetbrains mono';
+  font-family: inherit;
 }
 
-.function-btn:hover {
-  background-color: rgba(186, 129, 83, 0.7);
+.function-btn:hover,
+.dot-btn:hover,
+.digit-btn:hover,
+.dark-btn:hover {
+  background-color: var(--yellow);
+  color: var(--primary);
+  border-color: var(--secondary);
 }
 
 .digit-btn,
 .dot-btn {
-  background-color: var(--digit);
-}
-
-.dot-btn:hover,
-.digit-btn:hover,
-.dark-btn:hover {
-  background-color: #a9b576;
-  color: #000;
+  background-color: var(--primary);
 }
 
 .dark-btn {
-  background-color: var(--operator);
+  background-color: var(--secondary);
 }
