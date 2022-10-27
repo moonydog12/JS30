@@ -5,25 +5,25 @@ const amountTwo = document.querySelector('#amount-two');
 
 const rateEl = document.querySelector('#rate');
 const swapBtn = document.querySelector('#swap');
-const countries = ['HKD', 'JPY', 'TWD', 'USD', 'EUR', 'GBP', 'CNY', 'KRW', 'CHF'];
-countries.sort((a, b) => (a[0] > b[0] ? 1 : -1));
+
 // Functions
 // Generate UI
-countries.forEach((country) => {
+const generateOptionEl = (countryName, parentNode) => {
   const optionEl = document.createElement('option');
-  optionEl.setAttribute('name', country);
-  optionEl.innerText = country;
-  currencyOne.append(optionEl);
-});
-
-countries.forEach((country) => {
-  const optionEl = document.createElement('option');
-  if (country === 'TWD') {
+  optionEl.setAttribute('name', countryName);
+  optionEl.innerText = countryName;
+  if (parentNode === currencyTwo && countryName === 'TWD') {
     optionEl.setAttribute('selected', true);
   }
-  optionEl.setAttribute('name', country);
-  optionEl.innerText = country;
-  currencyTwo.append(optionEl);
+  parentNode.append(optionEl);
+};
+
+const countries = ['HKD', 'JPY', 'TWD', 'USD', 'EUR', 'GBP', 'CNY', 'KRW', 'CHF'];
+const sortAlphabetically = (countryA, countryB) => (countryA[0] > countryB[0] ? -1 : 1);
+countries.sort(sortAlphabetically);
+countries.forEach((country) => {
+  generateOptionEl(country, currencyOne);
+  generateOptionEl(country, currencyTwo);
 });
 
 // Fetch exchange rates and update DOM (Async/Await)
@@ -53,6 +53,7 @@ const calculateRate = async () => {
 // };
 
 // Event listeners
+
 currencyOne.addEventListener('change', calculateRate);
 currencyTwo.addEventListener('change', calculateRate);
 amountOne.addEventListener('input', calculateRate);
