@@ -89,11 +89,9 @@ I prefer the second approach because I think it makes the code more like the ori
 
 **Reference**
 
-> [Promise][promise]
+> [Promise-js.info][promise]
 >
-> [Async/await][async/await]
->
-> [Callback hell][callback-hell]
+> [Async/await-js.info][async/await]
 
 [callback-hell]: https://www.wfublog.com/2020/10/js-asynchronous-callback-hell-fetch-promise-api.html
 [promise]: https://javascript.info/promise-basics
