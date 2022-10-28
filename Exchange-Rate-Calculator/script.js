@@ -38,20 +38,6 @@ const calculateRate = async () => {
   amountTwo.value = (amountOne.value * rate).toFixed(2);
 };
 
-// Fetch exchange rates and update DOM (Promise chain)
-
-// const calculateRateWithFetch = () => {
-//   const currencyOneValue = currencyOne.value;
-//   const currencyTwoValue = currencyTwo.value;
-//   fetch(`https://open.exchangerate-api.com/v6/latest/${currencyOneValue}`)
-//     .then((res) => res.json())
-//     .then((data) => {
-//       const rate = data.rates[currencyTwoValue];
-//       rateEl.textContent = `1 ${currencyOneValue} = ${rate} ${currencyTwoValue}`;
-//       amountTwo.value = (amountOne.value * rate).toFixed(2);
-//     });
-// };
-
 // Event listeners
 
 currencyOne.addEventListener('change', calculateRate);
