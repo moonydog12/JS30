@@ -28,8 +28,7 @@ const addData = (user) => {
 
 // double everyone's money
 const doubleMoney = () => {
-  persons = persons.map((obj) => {
-    const person = obj;
+  persons = persons.map((person) => {
     person.money *= 2;
     return person;
   });
@@ -52,6 +51,7 @@ const calculateWealth = () => {
   wealthEl.innerHTML = `<h3>Total Wealth : <strong>$${wealth}</strong></h3>`;
   main.appendChild(wealthEl);
 };
+
 // filter only millionaires
 const showMillionaires = () => {
   const oneMillion = 1000000;
