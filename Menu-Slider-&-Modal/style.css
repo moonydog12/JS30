@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 :root {
   --modal-duration: 1s;
   --primary-color: #30336b;
@@ -10,7 +12,7 @@
 }
 
 body {
-  font-family: 'jetbrains mono';
+  font-family: 'Loto', sans-serif;
   margin: 0;
   /* setting animation */
   transition: transform 0.3s ease;
@@ -25,14 +27,12 @@ nav {
   background-color: var(--primary-color);
   border-right: 2px solid rgba(200, 200, 200, 0.1);
   color: var(--white);
-  /* key */
   position: fixed;
   top: 0;
   left: 0;
   width: 15vw;
   height: 100vh;
   z-index: 2;
-  /* key */
   transform: translateX(-100%);
 }
 
@@ -101,7 +101,7 @@ input[type='submit'] {
 }
 
 button:focus {
-  outline: none;
+  outline: 0;
 }
 
 .toggle {
