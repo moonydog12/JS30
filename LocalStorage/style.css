@@ -32,6 +32,11 @@ svg {
   box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.wrapper-buttons {
+  display: flex;
+  justify-content: end;
+}
+
 h2 {
   text-align: center;
   margin: 0;
@@ -78,4 +83,28 @@ h2 {
   padding: 10px;
   outline: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  padding: 5px;
+  outline: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #fff;
+  color: #dc3545;
+  transform: scale(1.1);
+  border: 1px solid #dc3545;
+}
+
+.loading-list {
+  color: navy;
+  font-size: 20px;
 }
