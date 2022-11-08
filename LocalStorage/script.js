@@ -31,7 +31,7 @@ const addItem = (e) => {
   items.push(item);
   populateList(items);
 
-  // LocalStorage only store string,so we use stringify to convert it beforehand
+  // LocalStorage only accept string,must convert it beforehand
   localStorage.setItem('items', JSON.stringify(items));
   form.reset();
 };
