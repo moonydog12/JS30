@@ -36,6 +36,9 @@ This is the main repository for all of the projects built with vanilla JavaScrip
 | 32  |                    [Form Validator](https://github.com/moonydog12/JavaScript-Armory/tree/main/Form-Validator)                     |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Form-Validator/)         |
 | 33  |               [Movie Seats Booking](https://github.com/moonydog12/JavaScript-Armory/tree/main/Movie-Seats-Booking)                |      [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Movie-Seats-Booking/)      |
 | 34  | [Exchange Rate Calculator Fetch & JSON Intro](https://github.com/moonydog12/JavaScript-Armory/tree/main/Exchange-Rate-Calculator) |   [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Exchange-Rate-Calculator/)    |
+| 35  |                [Dom & Array Methods](https://github.com/moonydog12/JavaScript-Armory/tree/main/DOM-Array-Methods)                 |       [Live Demo](https://moonydog12.github.io/JavaScript-Armory/DOM-Array-Methods/)       |
+| 36  |               [Menu slider & Modal](https://github.com/moonydog12/JavaScript-Armory/tree/main/Menu-Slider-&-Modal)                |      [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Menu-Slider-&-Modal/)      |
+| 37  |                         [Hangman game](https://github.com/moonydog12/JavaScript-Armory/tree/main/Hangman)                         |            [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Hangman/)            |
 
 ## Markdowm template
 

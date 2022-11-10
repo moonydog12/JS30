@@ -1,5 +1,7 @@
 # Menu Slider & Modal
 
+![image](../assets/image/menu.jpg)
+
 ## Abstract
 
 Landing page with sliding menu and modal
