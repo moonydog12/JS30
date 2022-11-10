@@ -15,6 +15,7 @@ const correctLetters = [];
 const wrongLetters = [];
 
 // Show the hidden word
+
 const displayWord = () => {
   wordEl.innerHTML = `
   ${selectedWord
@@ -31,16 +32,16 @@ const displayWord = () => {
     popup.style.display = 'flex';
   }
 };
+
 // Update the wrong letters
+
 const updateWrongLettersEl = () => {
-  // Display wrong letters
   wrongLettersEl.innerHTML = `${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
   ${wrongLetters.map((letter) => `<span>${letter}</span>`)}`;
 
   figureParts.forEach((part, index) => {
     const errors = wrongLetters.length;
     const partEl = part;
-    // Display parts
     if (index < errors) {
       partEl.style.display = 'block';
     } else {
@@ -56,12 +57,14 @@ const updateWrongLettersEl = () => {
 };
 
 // Show notification
+
 const showNotification = () => {
   notification.classList.add('show');
   setTimeout(() => {
     notification.classList.remove('show');
   }, 1000);
 };
+
 // Keydown letter press
 
 window.addEventListener('keydown', (e) => {
@@ -84,8 +87,8 @@ window.addEventListener('keydown', (e) => {
 });
 
 // Restart game
+
 playAgainBtn.addEventListener('click', () => {
-  // Empty arrays
   correctLetters.splice(0);
   wrongLetters.splice(0);
   selectedWord = words[Math.floor(Math.random() * words.length)];
