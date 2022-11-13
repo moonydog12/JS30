@@ -92,7 +92,7 @@ const updateWrongLettersEl = () => {
     }
   });
 
-  // Check if lost, if so pop the modal
+  // Check if user lost, if so pop the lost modal
   if (wrongLetters.length === figureParts.length) {
     message.innerText = 'Unfortunately you lost.';
     popup.style.display = 'flex';
@@ -102,7 +102,7 @@ const updateWrongLettersEl = () => {
 
 **Show notification when select a letter twice:**
 
-An utility function to tell user if they guess the same letter more than one time
+An utility function to tell user that they guess the same letter more than one time
 
 ```js
 const showNotification = () => {
@@ -114,6 +114,8 @@ const showNotification = () => {
 ```
 
 **Listen user keydown events**
+
+Business logic to detect users' keyboard inputs and examine them.
 
 ```js
 window.addEventListener('keydown', (e) => {
@@ -142,6 +144,8 @@ window.addEventListener('keydown', (e) => {
 
 **Restart game**
 
+Empty the data in both arrays which store users' inputs,and rerender the UI.
+
 ```js
 playAgainBtn.addEventListener('click', () => {
   // Empty arrays
@@ -159,5 +163,7 @@ playAgainBtn.addEventListener('click', () => {
 ```
 
 ## Summary
+
+**Reference:**
 
 > [MDN - SVG tutorial](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial)
