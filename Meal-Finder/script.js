@@ -1,4 +1,4 @@
-const searchBtn = document.querySelector('#search');
+const searchInput = document.querySelector('#search');
 const submitBtn = document.querySelector('#submit');
 const randomBtn = document.querySelector('#random');
 const mealsEl = document.querySelector('#meals');
@@ -6,49 +6,49 @@ const resultHeading = document.querySelector('#result-heading');
 const singleMealEl = document.querySelector('#single-meal');
 
 // Search meal and fetch from API
-const searchMeal = (event) => {
+
+const searchMeal = async (event) => {
   event.preventDefault();
-  // Clear single meal
+
+  // Clear single meal HTML content
   singleMealEl.innerHTML = '';
-  // Get search term
-  const term = search.value;
+  mealsEl.innerHTML = '';
 
-  // Check for empty
-  if (term.trim()) {
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
-      .then((res) => res.json())
-      .then((data) => {
-        resultHeading.innerHTML = `<h2>Search results for '${term}':</h2> `;
+  // Get search string from the input
+  const term = searchInput.value.trim();
+  if (term) {
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`);
+    const data = await response.json();
+    resultHeading.innerHTML = `<h2>Search results for '${term}':</h2>`;
 
-        if (data.meals === null) {
-          resultHeading.innerHTML = '<p>There are no search results. Try again!</p>';
-        } else {
-          mealsEl.innerHTML = data.meals
-            .map(
-              (meal) => `
-          <div class="meal">
-            <img src="${meal.strMealThumb}" alt="${meal.strMeal}"/>
-            <div class="meal-info" data-mealID="${meal.idMeal}">
-              <h3>${meal.strMeal}</h3>
-            </div>
+    if (data.meals) {
+      mealsEl.innerHTML = data.meals
+        .map(
+          (meal) => `
+        <div class="meal">
+          <img src="${meal.strMealThumb}" alt="${meal.strMeal}"/>
+          <div class="meal-info" data-mealID="${meal.idMeal}">
+            <h3>${meal.strMeal}</h3>
           </div>
-          `,
-            )
-            .join('');
-        }
-      });
+        </div>
+        `,
+        )
+        .join('');
+    } else {
+      resultHeading.innerHTML = `<p>There are no search results of ${term}, please try again!</p>`;
+    }
 
     // Clear search text
-    search.value = '';
-  } else {
-    alert('Please enter a search value');
+    searchInput.value = '';
   }
 };
-// Add meal to DOM
+
+// Generate HTML template and insert meal information into it
+
 const addMealToDOM = (meal) => {
   const ingredients = [];
-
-  for (let i = 1; i <= 20; i++) {
+  const IngredientsCount = 100;
+  for (let i = 1; i <= IngredientsCount; i++) {
     if (meal[`strIngredient${i}`]) {
       ingredients.push(`${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`);
     } else {
@@ -76,41 +76,32 @@ const addMealToDOM = (meal) => {
 };
 
 // Fetch meal by ID
-// www.themealdb.com/api/json/v1/1/lookup.php?i=52772
-const getMealById = (mealID) => {
-  fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
-    .then((res) => res.json())
-    .then((data) => {
-      const meal = data.meals[0];
 
-      addMealToDOM(meal);
-    });
+const getMealById = async (mealID) => {
+  const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`);
+  const data = await response.json();
+  const [mealData] = data.meals;
+  addMealToDOM(mealData);
 };
+
 // Fetch random meal
-const getRandomMeal = () => {
+
+const getRandomMeal = async () => {
   // Clear meals and heading
   mealsEl.innerHTML = '';
   resultHeading.innerHTML = '';
-  fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-    .then((res) => res.json())
-    .then((data) => {
-      const meal = data.meals[0];
-      addMealToDOM(meal);
-    });
+  const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
+  const data = await response.json();
+  const [mealData] = data.meals;
+  addMealToDOM(mealData);
 };
-// Event listeners
+
+// Listeners
+
 submitBtn.addEventListener('submit', searchMeal);
-
 randomBtn.addEventListener('click', getRandomMeal);
-
 mealsEl.addEventListener('click', (event) => {
-  const mealInfo = event.path.find((item) => {
-    if (item.classList) {
-      return item.classList.contains('meal-info');
-    } else {
-      return false;
-    }
-  });
+  const mealInfo = event.composedPath().find((item) => item.classList?.contains('meal-info'));
   if (mealInfo) {
     const mealID = mealInfo.getAttribute('data-mealID');
     getMealById(mealID);
