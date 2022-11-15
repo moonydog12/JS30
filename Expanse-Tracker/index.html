@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <h2 class="heading heading-title">Expense Tracker</h2>
+
+    <main class="main">
+      <h4 class="heading heading-h4">Your Balance</h4>
+      <h1 class="balance-heading">$0.00</h1>
+      <div class="state">
+        <div class="state__box">
+          <h4>Income</h4>
+          <p id="money-plus" class="state__money state__plus">+$0.00</p>
+        </div>
+
+        <div class="state__box">
+          <h4>Expense</h4>
+          <p id="money-minus" class="state__money state__minus">-$0.00</p>
+        </div>
+      </div>
+
+      <h3 class="heading heading-h3">History</h3>
+      <ul class="history__list">
+        <li class="minus history__item">
+          Cash <span>-$300</span><button class="delete-btn">X</button>
+        </li>
+      </ul>
+
+      <h3 class="heading heading-h3">Add new transaction</h3>
+      <form id="form">
+        <div class="form__control">
+          <label for="form__text" class="form__label">Text</label>
+          <input type="text" class="form__text" placeholder="Enter text..." />
+        </div>
+
+        <div class="form__control">
+          <label for="form__amount" class="form__label"
+            >Amount <br />(negative - expense, positive - income)</label
+          >
+          <input type="number" class="form__amount" placeholder="Enter amount..." />
+        </div>
+
+        <button class="form__btn">Add transaction</button>
+      </form>
+    </main>
+  </body>
+</html>
