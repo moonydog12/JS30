@@ -1,4 +1,4 @@
-# Hangman game
+# Meal Finder
 
 ![image](../assets/image/meal-finder.jpg)
 

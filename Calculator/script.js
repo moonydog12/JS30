@@ -1,79 +1,64 @@
-// Selectors
 const mainScreen = document.querySelector('.main-screen');
 const subScreen = document.querySelector('.sub-screen');
-const deleteBtn = document.getElementById('deleteBtn');
-const equalBtn = document.getElementById('equalBtn');
-const clearBtn = document.getElementById('clearBtn');
-const digitButtons = document.querySelectorAll('.digit-btn');
-const operatorButtons = document.querySelectorAll('.operator-btn');
+const buttonsContainer = document.querySelector('.buttons');
+const equalBtn = document.querySelector('#equalBtn');
+const deleteBtn = document.querySelector('#deleteBtn');
+const clearBtn = document.querySelector('#clearBtn');
 
-let firstNum;
-let secondNum;
-let operatorSymbol;
+let firstValue = '';
+let secondValue = '';
+let symbol = '';
+
 // Functions
-
-// operator functions
+// operate functions
 const roundNumber = (num) => (num.toString().length >= 5 ? parseFloat(num).toFixed(2) : num);
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 const divide = (a, b) => roundNumber(a / b);
 
-const compute = (a, b, operator) => {
+const calculate = (a, b, operator) => {
   const num1 = +a;
   const num2 = +b;
-  switch (operator) {
-    case '+':
-      return add(num1, num2);
-    case '-':
-      return subtract(num1, num2);
-    case '×':
-      return multiply(num1, num2);
-    case '÷':
-      return divide(num1, num2);
-    default:
-      return '';
-  }
+  const operations = {
+    '+': add(num1, num2),
+    '-': subtract(num1, num2),
+    '×': multiply(num1, num2),
+    '÷': divide(num1, num2),
+  };
+  return operations[operator];
 };
 
+// Delete one digit when user click delete button
 const deleteNumber = () => {
   mainScreen.innerHTML = mainScreen.innerHTML.toString().slice(0, -1);
 };
 
-const appendNumber = (e) => {
-  mainScreen.textContent += e.target.textContent;
+const appendNumber = (num) => {
+  mainScreen.textContent += num;
+};
+
+const clearAll = () => {
+  firstValue = null;
+  secondValue = null;
+  symbol = null;
+  mainScreen.innerHTML = '';
+  subScreen.innerHTML = '';
 };
 
 // Listeners
-digitButtons.forEach((button) => {
-  button.addEventListener('click', appendNumber);
+buttonsContainer.addEventListener('click', (event) => {
+  if (event.target.matches('.digit-btn')) {
+    const number = event.target.textContent;
+    appendNumber(number);
+    firstValue = mainScreen.textContent;
+  }
 });
 
-operatorButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    firstNum = mainScreen.textContent;
-    operatorSymbol = button.textContent;
-    subScreen.innerHTML = `${firstNum} ${operatorSymbol}`;
-    mainScreen.textContent = '';
-  });
-});
-
-clearBtn.addEventListener('click', () => {
-  firstNum = null;
-  secondNum = null;
-  operatorSymbol = null;
-  mainScreen.textContent = '';
-  subScreen.textContent = '';
+buttonsContainer.addEventListener('click', (event) => {
+  if (event.target.matches('.operator-btn')) {
+  }
 });
 
 deleteBtn.addEventListener('click', deleteNumber);
-equalBtn.addEventListener('click', () => {
-  if (firstNum === null || secondNum === null) return 'No numbers';
-  secondNum = mainScreen.textContent;
-  const answer = compute(firstNum, secondNum, operatorSymbol);
-  subScreen.innerHTML = '';
-  secondNum = null;
-  mainScreen.textContent = answer;
-  firstNum = answer;
-  return answer;
-});
+clearBtn.addEventListener('click', clearAll);

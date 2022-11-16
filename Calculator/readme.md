@@ -1,5 +1,17 @@
 # Calculator
 
-Calculator created with HTML, CSS and JS.
+![image](../assets/image/Calculator.jpg)
 
-[Live Demo](https://moonydog12.github.io/calculator/) :point_left:
+## Project Specifications
+
+- Calculator contains functions for all of the basic math operators
+- User can undo if they click the wrong number
+- TODO:Keyword support 
+
+## Note
+
+## Summary
+
+**Key points**
+
+**Reference:**
