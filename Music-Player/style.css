@@ -1,0 +1,151 @@
+:root {
+  --color-white: #f8f9fa;
+  --color-light: #dee2e6;
+  --color-dark: #212529;
+  --color-dark-lighter: #495057;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background: url('images/background.jpg');
+  background-position: bottom;
+}
+
+h1 {
+  color: var(--color-dark);
+  font-size: 4rem;
+  -webkit-text-stroke: 1px var(--color-dark-lighter);
+}
+
+.music {
+  background-color: var(--color-light);
+  border-radius: 15px;
+  box-shadow: 0.5rem 2rem 1rem rgba(24, 29, 40, 0.6);
+  display: flex;
+  padding: 20px 30px;
+  position: relative;
+  margin: 100px 0;
+  z-index: 10;
+}
+
+.image {
+  position: relative;
+  width: 110px;
+}
+
+.image::after {
+  content: '';
+  background-color: var(--color-light);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 2rem;
+  height: 2rem;
+  transform: translate(-50%, 75%);
+}
+
+.image__cover {
+  max-width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 11rem;
+  position: absolute;
+  bottom: 0;
+  animation: rotate 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.music.play .image__cover {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate((0deg));
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.action-btn {
+  background-color: var(--color-light);
+  border: 0;
+  color: var(--color-dark);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.action-btn:focus {
+  outline: none;
+}
+
+.action-btn.action-btn-big {
+  color: var(--color-dark);
+  font-size: 3.6rem;
+}
+
+.music__info {
+  background-color: rgba(73, 80, 87, 0.6);
+  border-radius: 15px 15px 0 0;
+  padding: 1rem 1rem 1rem 13rem;
+  width: 80%;
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  opacity: 0;
+  transform: translateY(0%);
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  z-index: 0;
+}
+
+.music.play .music__info {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+
+.music__title {
+  margin: 0;
+  color: var(--color-dark);
+  font-size: 1.8rem;
+}
+
+.progress {
+  background: var(--color-light);
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.progress__bar {
+  background-color: var(--color-dark);
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
