@@ -39,8 +39,9 @@ This is the main repository for all of the projects built with vanilla JavaScrip
 | 35  |                [Dom & Array Methods](https://github.com/moonydog12/JavaScript-Armory/tree/main/DOM-Array-Methods)                 |       [Live Demo](https://moonydog12.github.io/JavaScript-Armory/DOM-Array-Methods/)       |
 | 36  |               [Menu slider & Modal](https://github.com/moonydog12/JavaScript-Armory/tree/main/Menu-Slider-&-Modal)                |      [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Menu-Slider-&-Modal/)      |
 | 37  |                         [Hangman game](https://github.com/moonydog12/JavaScript-Armory/tree/main/Hangman)                         |            [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Hangman/)            |
-| 38  |                         [Meal finder](https://github.com/moonydog12/JavaScript-Armory/tree/main/Meal-Finder/)                         |            [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Meal-Finder/)            |
-
+| 38  |                       [Meal finder](https://github.com/moonydog12/JavaScript-Armory/tree/main/Meal-Finder/)                       |          [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Meal-Finder/)          |
+| 39  |                   [Expense tracker](https://github.com/moonydog12/JavaScript-Armory/tree/main/Expense-Tracker/)                   |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Expense-Tracker/)        |
+| 40  |                      [Music player](https://github.com/moonydog12/JavaScript-Armory/tree/main/Music-Player/)                      |         [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Music-Player/)          |
 
 ## Markdowm template
 
