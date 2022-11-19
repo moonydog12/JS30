@@ -110,6 +110,7 @@ nextBtn.addEventListener('click', switchSong('next'));
 
 `updateProgress` :
 
+<<<<<<< HEAD
 1. Get the `duration` and `currentTime` value from event interface
 2. Calculating the percentage of progress
 3. Dynamically change progress bar width with percentage
@@ -121,6 +122,14 @@ nextBtn.addEventListener('click', switchSong('next'));
 3. Get the total time of current song
 4. Calculate the value and assign to `currentTime`
 
+=======
+  1. Get the `duration` and `currentTime` value from event interface
+  2. Calculating the percentage of progress
+  3. Dynamically change progress bar width with percentage
+
+`setProgress` :
+
+>>>>>>> 50dd193b27ee80721e9cca698c8b85e6ce48df14
 ```javascript
 const updateProgress = (e) => {
   const { duration, currentTime } = e.target;
@@ -141,6 +150,7 @@ const setProgress = (e) => {
 
 **Key points**
 
+<<<<<<< HEAD
 - Use CSS `transition` property and `keyframe` to achieve animation.
 - Audio API provide some useful methods
 - Return callback function and closure for `EventListener` method of the `EventTarget` interface
@@ -152,3 +162,6 @@ const setProgress = (e) => {
 > [MDN - @keyframe](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
 >
 > [Js.info - closure](https://javascript.info/closure)
+=======
+**Reference:**
+>>>>>>> 50dd193b27ee80721e9cca698c8b85e6ce48df14
