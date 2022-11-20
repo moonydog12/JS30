@@ -39,21 +39,17 @@ const pauseSong = () => {
 };
 
 // Switch song
-const switchSong = (direction) => {
-  // Callback function & Closure
-  return () => {
-    if (direction === 'prev') {
-      songIndex -= 1;
-      songIndex < 0 ? (songIndex = songs.length - 1) : (songIndex = songIndex);
-    } else if (direction === 'next') {
-      songIndex += 1;
-      songIndex > songs.length - 1 ? (songIndex = 0) : (songIndex = songIndex);
-    }
-    loadSong(songs[songIndex]);
-    playSong();
-  };
+const switchSong = (direction) => () => {
+  if (direction === 'prev') {
+    songIndex -= 1;
+    songIndex < 0 ? (songIndex = songs.length - 1) : songIndex;
+  } else if (direction === 'next') {
+    songIndex += 1;
+    songIndex > songs.length - 1 ? (songIndex = 0) : songIndex;
+  }
+  loadSong(songs[songIndex]);
+  playSong();
 };
-
 // Update progress bar
 const updateProgress = (e) => {
   const { duration, currentTime } = e.target;
@@ -76,11 +72,7 @@ loadSong(songs[songIndex]);
 // Listener
 playBtn.addEventListener('click', () => {
   const isPlaying = musicContainer.classList.contains('play');
-  if (isPlaying) {
-    pauseSong();
-  } else {
-    playSong();
-  }
+  isPlaying ? pauseSong() : playSong();
 });
 
 // Change song

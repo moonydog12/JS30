@@ -13,6 +13,6 @@
     "linebreak-style": ["error", "windows"],
     "operator-linebreak": ["error", "after"],
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "no-unused-expressions": { "allowShortCircuit": true, "allowTernary": true }
+    "no-unused-expressions": "off"
   }
 }
