@@ -32,7 +32,7 @@ const showPosts = async () => {
   });
 };
 
-// SHow loader & fetch more posts
+// Show loader & fetch more posts
 const showLoading = () => {
   loader.classList.add('show');
 
@@ -54,9 +54,11 @@ const filterPosts = (e) => {
     const currentPost = post;
     const title = currentPost.querySelector('.post__title').innerText.toLowerCase();
     const body = currentPost.querySelector('.post__content').innerText.toLowerCase();
-    title.indexOf(term) > -1 || body.indexOf(term) > -1
-      ? (currentPost.style.display = 'flex')
-      : (currentPost.style.display = 'none');
+    if (title.indexOf(term) > -1 || body.indexOf(term) > -1) {
+      currentPost.style.display = 'flex';
+    } else {
+      currentPost.style.display = 'none';
+    }
   });
 };
 
