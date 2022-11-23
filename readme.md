@@ -42,7 +42,7 @@ This is the main repository for all of the projects built with vanilla JavaScrip
 | 38  |                       [Meal finder](https://github.com/moonydog12/JavaScript-Armory/tree/main/Meal-Finder/)                       |          [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Meal-Finder/)          |
 | 39  |                   [Expense tracker](https://github.com/moonydog12/JavaScript-Armory/tree/main/Expense-Tracker/)                   |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Expense-Tracker/)        |
 | 40  |                      [Music player](https://github.com/moonydog12/JavaScript-Armory/tree/main/Music-Player/)                      |         [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Music-Player/)          |
-| 41  |                    [Music player](https://github.com/moonydog12/JavaScript-Armory/tree/main/Infinite-scroll/)                     |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Infinite-scroll/)        |
+| 41  |                    [Infinite Scroll Posts](https://github.com/moonydog12/JavaScript-Armory/tree/main/Infinite-scroll/)                     |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Infinite-scroll/)        |
 
 ## Markdowm template
 

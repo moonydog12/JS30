@@ -153,4 +153,4 @@ const filterPosts = (e) => {
 
 > [MDN - Array.prototype.indexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
 >
->[MDN - Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)
+> [MDN - Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)
