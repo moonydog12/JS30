@@ -30,16 +30,13 @@ const words = [
   'loving',
 ];
 
-// Init word,score,time
+// Init variables
 let chosenWord;
 let score = 0;
 let time = 10;
-
-// Set difficulty select value
 let difficulty = localStorage.getItem('difficulty') ?? 'medium';
 difficultySelect.value = difficulty;
 
-// focus on text when start
 text.focus();
 
 // If the game is over,show end screen
@@ -59,11 +56,12 @@ const updateTime = () => {
 
   if (time === 0) {
     clearInterval(timeInterval);
-    // end game
     gameOver();
   }
 };
-const timeInterval = setInterval(updateTime, 1000);
+
+// Set the initial timer
+let timeInterval = setInterval(updateTime, 1000);
 
 // Generate random word form words array and add to DOM
 const getRandomWord = () => words[Math.floor(Math.random() * words.length)];
@@ -78,16 +76,29 @@ const updateScore = () => {
   scoreEl.innerHTML = score;
 };
 
+// Init game setting
+const init = () => {
+  score = 0;
+  time = 10;
+  difficulty = localStorage.getItem('difficulty') ?? 'medium';
+  addWordToDOM();
+  updateScore();
+  updateTime();
+  timeInterval = setInterval(updateTime, 1000);
+  endgameEl.style.display = 'none';
+};
+
 // Listener
 text.addEventListener('input', (event) => {
-  const insertedText = event.target.value;
+  const input = event.target;
+  const insertedText = input.value;
 
   if (insertedText === chosenWord) {
     addWordToDOM();
     updateScore();
 
     // Clear input field
-    event.target.value = '';
+    input.value = '';
     if (difficulty === 'hard') {
       time += 1;
     } else if (difficulty === 'medium') {
@@ -113,7 +124,7 @@ settingForm.addEventListener('change', (event) => {
 endgameEl.addEventListener('click', (e) => {
   const id = e.target.getAttribute('id');
   if (id === 'reload-btn') {
-    location.reload();
+    init();
   }
 });
 
