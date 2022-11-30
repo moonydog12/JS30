@@ -19,7 +19,7 @@ This is the main repository for all of the projects built with vanilla JavaScrip
 | 13  |                [Slide in on Scroll](https://github.com/moonydog12/JavaScript-Armory/tree/main/Slide-in-on-Scroll)                 |      [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Slide-in-on-Scroll/)       |
 | 15  |                      [LocalStorage](https://github.com/moonydog12/JavaScript-Armory/tree/main/LocalStorage)                       |         [Live Demo](https://moonydog12.github.io/JavaScript-Armory/LocalStorage/)          |
 | 16  |                 [Mouse Move Shadow](https://github.com/moonydog12/JavaScript-Armory/tree/main/Mouse-Move-Shadow)                  |       [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Mouse-Move-Shadow/)       |
-| 17  |                  [Relaxer App](https://github.com/moonydog12/JavaScript-Armory/tree/main/Sort-Without-Articles)                   |     [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Sort-Without-Articles/)     |
+| 17  |             [Sort Without Articles](https://github.com/moonydog12/JavaScript-Armory/tree/main/Sort-Without-Articles)              |     [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Sort-Without-Articles/)     |
 | 18  |       [Adding Up Times with Reduce](https://github.com/moonydog12/JavaScript-Armory/tree/main/Adding-Up-Times-with-Reduce)        |  [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Adding-Up-Times-with-Reduce/)  |
 | 20  |                  [Speech Detection](https://github.com/moonydog12/JavaScript-Armory/tree/main/Speech-Detection)                   |       [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Speech-Detection/)        |
 | 21  |                       [Geolocation](https://github.com/moonydog12/JavaScript-Armory/tree/main/Geolocation)                        |          [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Geolocation/)          |
@@ -42,7 +42,9 @@ This is the main repository for all of the projects built with vanilla JavaScrip
 | 38  |                       [Meal finder](https://github.com/moonydog12/JavaScript-Armory/tree/main/Meal-Finder/)                       |          [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Meal-Finder/)          |
 | 39  |                   [Expense tracker](https://github.com/moonydog12/JavaScript-Armory/tree/main/Expense-Tracker/)                   |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Expense-Tracker/)        |
 | 40  |                      [Music player](https://github.com/moonydog12/JavaScript-Armory/tree/main/Music-Player/)                      |         [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Music-Player/)          |
-| 41  |                    [Infinite Scroll Posts](https://github.com/moonydog12/JavaScript-Armory/tree/main/Infinite-scroll/)                     |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Infinite-scroll/)        |
+| 41  |                [Infinite Scroll Posts](https://github.com/moonydog12/JavaScript-Armory/tree/main/Infinite-scroll/)                |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Infinite-scroll/)        |
+| 42  |                [Typing Game](https://github.com/moonydog12/JavaScript-Armory/tree/main/Typing-Game)                |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Typing-Game/)        |
+| 43  |                [Typing Game](https://github.com/moonydog12/JavaScript-Armory/tree/main/Speech-reader)                |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Speech-reader/)        |
 
 ## Markdowm template
 

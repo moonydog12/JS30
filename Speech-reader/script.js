@@ -65,11 +65,6 @@ const speakText = () => {
   speechSynthesis.speak(message);
 };
 
-// Set voice
-const setVoice = (event) => {
-  message.voice = voices.find((voice) => voice.name === event.target.value);
-};
-
 // Set text
 const setTextMessage = (text) => {
   message.text = text;
@@ -113,9 +108,15 @@ const getVoices = () => {
   });
 };
 
+// Set voice
+const setVoice = (event) => {
+  message.voice = voices.find((voice) => voice.name === event.target.value);
+};
+
 // Voices changed
 speechSynthesis.addEventListener('voiceschanged', getVoices);
-// Toggle text box
+
+// Toggle dropdown text box
 toggleBtn.addEventListener('click', () => {
   document.querySelector('.text__box').classList.toggle('show');
 });

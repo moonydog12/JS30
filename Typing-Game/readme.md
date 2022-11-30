@@ -1,6 +1,7 @@
 # Speed Typer Typing Game
 
 ![image](../assets/image/type-racer.jpg)
+
 Game to beat the clock by typing random words
 
 ## Project Specifications
