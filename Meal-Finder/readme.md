@@ -79,8 +79,8 @@ const getRandomMeal = async () => {
 
 **Reference:**
 
->[modern js info - Async/await ](https://javascript.info/async-await)
-> 
->[MDN - Asynchronous](https://developer.mozilla.org/en-US/docs/Glossary/Asynchronous)
-> 
->[MDN - composedPath](https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath)
+> [modern js info - Async/await ](https://javascript.info/async-await)
+>
+> [MDN - Asynchronous](https://developer.mozilla.org/en-US/docs/Glossary/Asynchronous)
+>
+> [MDN - composedPath](https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath)

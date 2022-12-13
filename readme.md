@@ -43,8 +43,9 @@ This is the main repository for all of the projects built with vanilla JavaScrip
 | 39  |                   [Expense tracker](https://github.com/moonydog12/JavaScript-Armory/tree/main/Expense-Tracker/)                   |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Expense-Tracker/)        |
 | 40  |                      [Music player](https://github.com/moonydog12/JavaScript-Armory/tree/main/Music-Player/)                      |         [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Music-Player/)          |
 | 41  |                [Infinite Scroll Posts](https://github.com/moonydog12/JavaScript-Armory/tree/main/Infinite-scroll/)                |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Infinite-scroll/)        |
-| 42  |                [Typing Game](https://github.com/moonydog12/JavaScript-Armory/tree/main/Typing-Game)                |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Typing-Game/)        |
-| 43  |                [Typing Game](https://github.com/moonydog12/JavaScript-Armory/tree/main/Speech-reader)                |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Speech-reader/)        |
+| 42  |                       [Typing Game](https://github.com/moonydog12/JavaScript-Armory/tree/main/Typing-Game)                        |          [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Typing-Game/)          |
+| 43  |                      [Typing Game](https://github.com/moonydog12/JavaScript-Armory/tree/main/Speech-reader)                       |         [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Speech-reader/)         |
+| 44  |                       [Typing Game](https://github.com/moonydog12/JavaScript-Armory/tree/main/Memory-Cards)                       |          [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Memory-Cards)          |
 
 ## Markdowm template
 
