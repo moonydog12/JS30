@@ -13,6 +13,7 @@ body {
   margin: 0;
 }
 
+/* Overall container */
 .app {
   align-items: center;
   display: flex;
@@ -33,7 +34,7 @@ body {
   right: 0;
   transform: translate(120%, 0);
   z-index: 1;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 /* Button */
@@ -42,13 +43,12 @@ body {
   border: 0;
   border-radius: 3rem;
   color: #f0ead2;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   margin-top: 1rem;
   padding: 1rem 1.5rem;
 }
 
 .btn-small {
-  font-size: 1.2rem;
   padding: 0.5rem 1rem;
 }
 
@@ -70,7 +70,10 @@ body {
   position: absolute;
 }
 
-/* Card */
+.btn-clear .fas {
+  margin-right: 5px;
+}
+/* Cards container & Card component */
 .cards {
   height: 30rem;
   max-width: 100%;
@@ -149,13 +152,14 @@ body {
 
 .card__front {
   transform: rotateX(0deg);
-  z-index: 2;
+  z-index: 10;
 }
 
 .card__back {
   transform: rotateX(180deg);
 }
 
+/* Arrow navigation of the card*/
 .nav {
   color: #6c584c;
   display: flex;
@@ -175,6 +179,7 @@ body {
   margin: 0 2.5rem;
 }
 
+/* Addon form component */
 .addon {
   align-items: center;
   background: #dde5b6;
@@ -185,7 +190,7 @@ body {
   padding: 1rem 0;
   position: absolute;
   top: 0;
-  transition: 0.3s ease;
+  transition: 0.5s all ease;
   width: 100%;
   opacity: 0;
   z-index: -1;

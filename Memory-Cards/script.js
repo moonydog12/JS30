@@ -69,7 +69,9 @@ nextBtn.addEventListener('click', () => {
   cardsEl[currentActiveCard].className = 'card left';
 
   currentActiveCard += 1;
-  if (currentActiveCard > cardsEl.length - 1) currentActiveCard = cardsEl.length - 1;
+  if (currentActiveCard > cardsEl.length - 1) {
+    currentActiveCard = 0;
+  }
 
   cardsEl[currentActiveCard].className = 'card active';
   updateCurrentText();
@@ -79,7 +81,9 @@ prevBtn.addEventListener('click', () => {
   cardsEl[currentActiveCard].className = 'card right';
 
   currentActiveCard -= 1;
-  if (currentActiveCard < 0) currentActiveCard = 0;
+  if (currentActiveCard < 0) {
+    currentActiveCard = cardsEl.length - 1;
+  }
 
   cardsEl[currentActiveCard].className = 'card active';
   updateCurrentText();
@@ -98,7 +102,9 @@ hideBtn.addEventListener('click', () => {
 addCardBtn.addEventListener('click', () => {
   const question = questionEl.value.trim();
   const answer = answerEl.value.trim();
-  if (!question || !answer) return;
+  if (!question || !answer) {
+    return;
+  }
   const newCard = { question, answer };
   createSingleCard(newCard);
   questionEl.value = '';
