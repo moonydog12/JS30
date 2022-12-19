@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  align-items: center;
+  background: #224941 url('./bg.jpg') no-repeat center center/cover;
+  color: #fff;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 300px;
+  width: 300px;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  transform: scale(1);
+}
+
+.circle {
+  background-color: #010f1c;
+  border-radius: 50%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.gradient-circle {
+  /* note: */
+  background: conic-gradient(#55b7a5 0%, #4ca493, #fff 40%, #fff 60%, #336d62 60%, #2a5b52 100%);
+  border-radius: 50%;
+  position: absolute;
+  height: 320px;
+  width: 320px;
+  z-index: -2;
+  top: -10px;
+  left: -10px;
+}
+
+.pointer {
+  background: #fff;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: block;
+}
+
+.pointer-container {
+  position: absolute;
+  top: -40px;
+  left: 140px;
+  width: 20px;
+  height: 190px;
+
+  animation: rotate 7.5s linear forwards infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* shrink/scale */
+
+.container.grow {
+  animation: grow 3s linear forwards;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.container.shrink {
+  animation: shrink 3s linear forwards;
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
