@@ -69,20 +69,25 @@ const showNotification = () => {
 
 window.addEventListener('keydown', (e) => {
   const letter = e.key;
-  if (e.keyCode >= 65 && e.keyCode <= 90) {
-    if (selectedWord.includes(letter)) {
-      if (!correctLetters.includes(letter)) {
-        correctLetters.push(letter);
-        displayWord();
-      } else {
-        showNotification();
-      }
-    } else if (!wrongLetters.includes(letter)) {
-      wrongLetters.push(letter);
-      updateWrongLettersEl();
+  if (!(e.keyCode >= 65 && e.keyCode <= 90)) {
+    return;
+  }
+
+  if (selectedWord.includes(letter)) {
+    if (!correctLetters.includes(letter)) {
+      correctLetters.push(letter);
+      displayWord();
     } else {
       showNotification();
     }
+    return;
+  }
+
+  if (!wrongLetters.includes(letter)) {
+    wrongLetters.push(letter);
+    updateWrongLettersEl();
+  } else {
+    showNotification();
   }
 });
 
