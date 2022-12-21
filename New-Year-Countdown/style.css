@@ -2,22 +2,28 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+html,
 body {
+  height: 100%;
   overflow: hidden;
-  background: url('https://images.unsplash.com/photo-1482329833197-916d32bdae74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1993&q=80');
-  margin: 0;
   padding: 0;
-  background-repeat: no-repeat;
-  background-size: cover;
+  margin: 0;
+}
+
+.app {
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1482329833197-916d32bdae74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1993&q=80');
   background-position: center;
-  min-height: 100vh;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #e1e1e1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
   justify-content: center;
-  text-align: center;
 }
 
 /* Ghost element to build a dark overlay */
@@ -29,60 +35,63 @@ body::after {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
 }
 
-body * {
-  z-index: 1;
+.app * {
+  z-index: 10;
 }
 
-h1 {
-  font-size: 60px;
-  margin: -80px 0 40px;
+.app__title {
+  font-size: 4.8rem;
+  margin: -20rem 0 4rem;
 }
 
 .year {
-  font-size: 200px;
-  z-index: -1;
-  opacity: 0.6;
-  position: absolute;
-  bottom: 20px;
+  font-size: 18rem;
   left: 50%;
+  opacity: 0.5;
+  position: absolute;
   transform: translateX(-50%);
+  z-index: 1;
 }
 
 .countdown {
-  /* display: flex; */
   display: none;
-  transform: scale(2);
-  gap: 15px;
+  gap: 1.2rem;
+  transform: scale(2.3);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .time {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.time h2 {
-  margin: 0 0 5px;
 }
 
 @media (max-width: 500px) {
-  h1 {
+  .app__title {
     font-size: 45px;
   }
+}
 
-  .time {
-    margin: 5px;
-  }
+/* Spinner and loading animation */
+.spinner {
+  width: 60px;
+  --b: 12px; /* the border thickness */
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%, rgb(189, 184, 184)) content-box;
+  -webkit-mask: repeating-conic-gradient(#0000 0deg, #000 1deg 20deg, #0000 21deg 36deg),
+    radial-gradient(farthest-side, #0000 calc(100% - var(--b) - 1px), #000 calc(100% - var(--b)));
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: spin 1s infinite steps(10);
+}
 
-  .time h2 {
-    font-size: 12px;
-    margin: 0;
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
   }
-
-  .time small {
-    font-size: 10px;
-  }
-} ;
+}
