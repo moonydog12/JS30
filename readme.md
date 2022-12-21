@@ -47,6 +47,7 @@ This is the main repository for all of the projects built with vanilla JavaScrip
 | 43  |                   [Speech Text Reader](https://github.com/moonydog12/JavaScript-Armory/tree/main/Speech-reader)                   |         [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Speech-reader/)         |
 | 44  |                      [Memory Cards](https://github.com/moonydog12/JavaScript-Armory/tree/main/Memory-Cards/)                      |         [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Memory-Cards/)          |
 | 45  |                         [Relaxer](https://github.com/moonydog12/JavaScript-Armory/tree/main/Relaxer-App/)                         |          [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Relaxer-App/)          |
+| 46  |                [New Year Countdown](https://github.com/moonydog12/JavaScript-Armory/tree/main/New-Year-Countdown/)                |      [Live Demo](https://moonydog12.github.io/JavaScript-Armory/New-Year-Countdown/)       |
 
 ## Markdowm template
 

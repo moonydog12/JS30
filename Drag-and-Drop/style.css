@@ -1,0 +1,96 @@
+:root {
+  --border-color: #e3e5e4;
+  --background-color: #c3c7ca;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 100%;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.draggable-list {
+  border: 1px solid var(--background-color);
+  color: #34444f;
+  padding: 0;
+  list-style: none;
+}
+
+.list-item.over .draggable {
+  background-color: #eaeaea;
+}
+
+.list-item {
+  background-color: #fff;
+  display: flex;
+  flex: 1;
+}
+
+.list-item:not(:last-of-type) {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.number {
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  height: 60px;
+  width: 60px;
+}
+
+.person-name {
+  margin: 0 20px 0 0;
+}
+
+.list-item.right .person-name {
+  color: #3ae374;
+}
+
+.list-item.wrong .person-name {
+  color: #ff3838;
+}
+
+.draggable {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  flex: 1;
+}
+
+.check-btn {
+  background-color: var(--background-color);
+  border: 0;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.check-btn:active {
+  transform: scale(0.9);
+}
+
+.check-btn:focus {
+  outline: none;
+}
