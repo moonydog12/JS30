@@ -1,6 +1,5 @@
 const draggableList = document.querySelector('#draggable-list');
 const checkButton = document.querySelector('#check-btn');
-
 const richestPeople = [
   'Jeff Bezos',
   'Bill Gates',
@@ -14,14 +13,58 @@ const richestPeople = [
   'Larry Page',
 ];
 
-// Store the list items
+// Store the list items & current dragStar item's index
 const listItems = [];
-
 let dragStarIndex;
+
+// Swap list items that are drag and drop
+const swapItems = (fromIndex, toIndex) => {
+  const itemOne = listItems[fromIndex].querySelector('.draggable');
+  const itemTwo = listItems[toIndex].querySelector('.draggable');
+
+  listItems[fromIndex].append(itemTwo);
+  listItems[toIndex].append(itemOne);
+};
+
+// Utilities which would be triggered when dragging list item
+const dragStart = (e) => {
+  dragStarIndex = +e.target.closest('li').getAttribute('data-index');
+};
+
+const dragEnter = (e) => {
+  e.target.closest('.list-item').classList.add('over');
+};
+
+const dragLeave = (e) => {
+  e.target.closest('.list-item').classList.remove('over');
+};
+
+const dragOver = (e) => {
+  e.preventDefault();
+};
+
+const dragDrop = (e) => {
+  const dragEndIndex = parseInt(e.target.closest('.list-item').getAttribute('data-index'), 10);
+  const currentItem = document.querySelectorAll('.list-item')[dragEndIndex];
+  swapItems(dragStarIndex, dragEndIndex);
+  currentItem.classList.remove('over');
+};
+
+// Add drag event listeners to elements
+const addDragEventsHandler = () => {
+  const draggableEls = document.querySelectorAll('.draggable');
+  const dragListItems = document.querySelectorAll('.list-item');
+  draggableEls.forEach((el) => el.addEventListener('dragstart', dragStart));
+  dragListItems.forEach((el) => {
+    el.addEventListener('dragover', dragOver);
+    el.addEventListener('drop', dragDrop);
+    el.addEventListener('dragenter', dragEnter);
+    el.addEventListener('dragleave', dragLeave);
+  });
+};
 
 // Insert list item into DOM
 const createList = () => {
-  // Scrambles array order
   [...richestPeople]
     .map((person) => ({ value: person, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
@@ -42,66 +85,22 @@ const createList = () => {
       draggableList.append(listItem);
     });
 
-  addEventListeners();
+  addDragEventsHandler();
 };
 
 createList();
 
-function dragStart() {
-  dragStarIndex = +this.closest('li').getAttribute('data-index');
-  console.log(dragStarIndex);
-}
-function dragEnter() {
-  this.classList.add('over');
-}
-function dragLeave() {
-  this.classList.remove('over');
-}
-function dragOver(e) {
-  e.preventDefault();
-}
-function dragDrop() {
-  const dragEndIndex = +this.getAttribute('data-index');
-  swapItems(dragStarIndex, dragEndIndex);
-  this.classList.remove('over');
-}
-
-// Swap list items that are drag and drop
-function swapItems(fromIndex, toIndex) {
-  const itemOne = listItems[fromIndex].querySelector('.draggable');
-  const itemTwo = listItems[toIndex].querySelector('.draggable');
-
-  listItems[fromIndex].appendChild(itemTwo);
-  listItems[toIndex].appendChild(itemOne);
-}
-
 // Check the order of list items
-function checkOrder() {
-  // Loop through the list
+checkButton.addEventListener('click', () => {
   listItems.forEach((listItem, index) => {
     const personName = listItem.querySelector('.draggable').innerText.trim();
 
-    // Matching the order with the original array
     if (personName !== richestPeople[index]) {
       listItem.classList.add('wrong');
-    } else {
-      listItem.classList.remove('wrong');
-      listItem.classList.add('right');
+      return;
     }
+
+    listItem.classList.remove('wrong');
+    listItem.classList.add('right');
   });
-}
-
-function addEventListeners() {
-  const draggables = document.querySelectorAll('.draggable');
-  const dragListItems = document.querySelectorAll('.list-item');
-
-  draggables.forEach((el) => el.addEventListener('dragstart', dragStart));
-  dragListItems.forEach((el) => {
-    el.addEventListener('dragover', dragOver);
-    el.addEventListener('drop', dragDrop);
-    el.addEventListener('dragenter', dragEnter);
-    el.addEventListener('dragleave', dragLeave);
-  });
-}
-
-checkButton.addEventListener('click', checkOrder);
+});
