@@ -182,3 +182,92 @@ const imgObserver = new IntersectionObserver(loadImg, {
   rootMargin: '200px',
 });
 imgTarget.forEach((img) => imgObserver.observe(img));
+
+// Slider component
+const slider = () => {
+  const slides = [...document.querySelectorAll('.slide')];
+  const leftBtn = document.querySelector('.slider__btn--left');
+  const rightBtn = document.querySelector('.slider__btn--right');
+  const dotContainer = document.querySelector('.dots');
+
+  let currentSlide = 0;
+  const maxSlide = slides.length;
+
+  const createDots = () => {
+    slides.forEach((_, i) => {
+      dotContainer.insertAdjacentHTML(
+        'beforeend',
+        `<button class="dots__dot" data-slide="${i}"></button>`,
+      );
+    });
+  };
+
+  const activateDot = (slide) => {
+    document
+      .querySelectorAll('.dots__dot')
+      .forEach((dot) => dot.classList.remove('dots__dot--active'));
+
+    document.querySelector(`.dots__dot[data-slide="${slide}"]`).classList.add('dots__dot--active');
+  };
+
+  const gotoSlide = (slide) => {
+    slides.forEach((el, index) => {
+      const currentEl = el;
+      currentEl.style.transform = `translateX(${(index - slide) * 100}%)`;
+    });
+  };
+
+  // Next slide
+  const nextSlide = () => {
+    if (currentSlide === maxSlide - 1) {
+      currentSlide = 0;
+    } else {
+      currentSlide += 1;
+    }
+
+    gotoSlide(currentSlide);
+    activateDot(currentSlide);
+  };
+
+  const prevSlide = () => {
+    if (currentSlide === 0) {
+      currentSlide = maxSlide - 1;
+    } else {
+      currentSlide -= 1;
+    }
+
+    gotoSlide(currentSlide);
+    activateDot(currentSlide);
+  };
+
+  const initSlider = () => {
+    createDots();
+    activateDot(0);
+
+    // Set initial slide
+    gotoSlide(0);
+  };
+
+  initSlider();
+
+  // Event handlers
+  rightBtn.addEventListener('click', nextSlide);
+  leftBtn.addEventListener('click', prevSlide);
+
+  // Keyboard support
+  document.addEventListener('keydown', (event) => {
+    event.key === 'ArrowLeft' && prevSlide();
+    event.key === 'ArrowRight' && nextSlide();
+  });
+
+  dotContainer.addEventListener('click', (event) => {
+    // Event delegation
+    if (event.target.classList.contains('dots__dot')) {
+      const { slide } = event.target.dataset;
+      gotoSlide(slide);
+      activateDot(slide);
+    }
+  });
+};
+
+slider();
