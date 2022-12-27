@@ -17,10 +17,12 @@ This is the main repository for all of the projects built with vanilla JavaScrip
 | 11  |               [Custom Video Player](https://github.com/moonydog12/JavaScript-Armory/tree/main/Custom-Video-Player)                |      [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Custom-Video-Player/)      |
 | 12  |            [Key Sequence Detection](https://github.com/moonydog12/JavaScript-Armory/tree/main/Key-Sequence-Detection)             |    [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Key-Sequence-Detection/)     |
 | 13  |                [Slide in on Scroll](https://github.com/moonydog12/JavaScript-Armory/tree/main/Slide-in-on-Scroll)                 |      [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Slide-in-on-Scroll/)       |
+| 14  |        [References VS Copying](https://github.com/moonydog12/JavaScript-Armory/tree/main/JavaScript-References-VS-Copying)        |                                       [Live Demo](#)                                       |
 | 15  |                      [LocalStorage](https://github.com/moonydog12/JavaScript-Armory/tree/main/LocalStorage)                       |         [Live Demo](https://moonydog12.github.io/JavaScript-Armory/LocalStorage/)          |
 | 16  |                 [Mouse Move Shadow](https://github.com/moonydog12/JavaScript-Armory/tree/main/Mouse-Move-Shadow)                  |       [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Mouse-Move-Shadow/)       |
 | 17  |             [Sort Without Articles](https://github.com/moonydog12/JavaScript-Armory/tree/main/Sort-Without-Articles)              |     [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Sort-Without-Articles/)     |
 | 18  |       [Adding Up Times with Reduce](https://github.com/moonydog12/JavaScript-Armory/tree/main/Adding-Up-Times-with-Reduce)        |  [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Adding-Up-Times-with-Reduce/)  |
+| 19  |                           [Bankist](https://github.com/moonydog12/JavaScript-Armory/tree/main/Bankist/)                           |            [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Bankist/)            |
 | 20  |                  [Speech Detection](https://github.com/moonydog12/JavaScript-Armory/tree/main/Speech-Detection)                   |       [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Speech-Detection/)        |
 | 21  |                       [Geolocation](https://github.com/moonydog12/JavaScript-Armory/tree/main/Geolocation)                        |          [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Geolocation/)          |
 | 22  |     [Follow Along Link Highlighter](https://github.com/moonydog12/JavaScript-Armory/tree/main/Follow-Along-Link-Highlighter)      | [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Follow-Along-Link-Highlighter/) |
@@ -49,7 +51,6 @@ This is the main repository for all of the projects built with vanilla JavaScrip
 | 45  |                         [Relaxer](https://github.com/moonydog12/JavaScript-Armory/tree/main/Relaxer-App/)                         |          [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Relaxer-App/)          |
 | 46  |                [New Year Countdown](https://github.com/moonydog12/JavaScript-Armory/tree/main/New-Year-Countdown/)                |      [Live Demo](https://moonydog12.github.io/JavaScript-Armory/New-Year-Countdown/)       |
 | 47  |                     [Sortable List](https://github.com/moonydog12/JavaScript-Armory/tree/main/Sortable-List/)                     |         [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Sortable-List/)         |
-| 50  |                          [Banklist](https://github.com/moonydog12/JavaScript-Armory/tree/main/Bankist/)                           |            [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Bankist/)            |
 
 ## Markdowm template
 
