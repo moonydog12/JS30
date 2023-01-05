@@ -51,6 +51,8 @@ This is the main repository for all of the projects built with vanilla JavaScrip
 | 45  |                         [Relaxer](https://github.com/moonydog12/JavaScript-Armory/tree/main/Relaxer-App/)                         |          [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Relaxer-App/)          |
 | 46  |                [New Year Countdown](https://github.com/moonydog12/JavaScript-Armory/tree/main/New-Year-Countdown/)                |      [Live Demo](https://moonydog12.github.io/JavaScript-Armory/New-Year-Countdown/)       |
 | 47  |                     [Sortable List](https://github.com/moonydog12/JavaScript-Armory/tree/main/Sortable-List/)                     |         [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Sortable-List/)         |
+| 48  |                [Number Guessing Game](https://github.com/moonydog12/JavaScript-Armory/tree/main/Number-Guessing/)                 |        [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Number-Guessing/)        |
+| 50  |                             [Mapty](https://github.com/moonydog12/JavaScript-Armory/tree/main/Mapty/)                             |             [Live Demo](https://moonydog12.github.io/JavaScript-Armory/Mapty/)             |
 
 ## Markdowm template
 
