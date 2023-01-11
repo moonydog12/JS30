@@ -1,20 +1,18 @@
 const msgEl = document.getElementById('msg');
+
+const getRandomNumber = () => Math.floor(Math.random() * 100) + 1;
 const randomNumber = getRandomNumber();
 
-function getRandomNumber() {
-  return Math.floor(Math.random() * 100) + 1;
-}
-
 // Write what user speaks
-function writeMessage(msg) {
+const writeMessage = (msg) => {
   msgEl.innerHTML = `
   <div>You said:</div>
   <span class="box">${msg}</span>
   `;
-}
+};
 
-// Cehck msg against number
-function checkNumber(msg) {
+// Check msg against number
+const checkNumber = (msg) => {
   const num = +msg;
 
   // Check if valid number
@@ -40,18 +38,18 @@ function checkNumber(msg) {
   } else {
     msgEl.innerHTML += '<div>GO Higher</div>';
   }
-}
+};
 
 // Capture user speak
-function onSpeak(event) {
+const onSpeak = (event) => {
   const message = event.result[0][0].transcript;
   writeMessage(message);
   checkNumber(message);
-}
+};
 
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-let recognition = new window.SpeechRecognition();
+const recognition = new window.SpeechRecognition();
 
 // Start recognition and game
 recognition.start();
