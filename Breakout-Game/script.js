@@ -139,7 +139,8 @@ function moveBall() {
   // Brick collision
   bricks.forEach((column) => {
     column.forEach((brick) => {
-      if (!brick.visible) return;
+      const curBrick = brick;
+      if (!curBrick.visible) return;
 
       // Check if the ball hit any side of the brick
       if (
@@ -149,8 +150,33 @@ function moveBall() {
         ball.y - ball.size < brick.y + brick.height // bottom brick side check
       ) {
         ball.dy *= -1;
-        brick.visible = false;
+        curBrick.visible = false;
+        increaseScore();
       }
+    });
+  });
+
+  // Hit bottom wall - reset the game
+  if (ball.y + ball.size > canvas.clientHeight) {
+    showAllBricks();
+    score = 0;
+  }
+}
+
+// Increase score
+function increaseScore() {
+  score += 1;
+
+  if (score % (brickColumnCount * brickRowCount) === 0) {
+    showAllBricks();
+  }
+}
+
+// Make all bricks appear
+function showAllBricks() {
+  bricks.forEach((column) => {
+    column.forEach((brick) => {
+      brick.visible = true;
     });
   });
 }
