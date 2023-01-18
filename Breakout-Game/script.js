@@ -17,7 +17,7 @@ const brickColumnCount = 5;
  * 4.Create bricks x
  * 5.Draw score x
  * 6.Add update() feature - animate - requestAnimationFrame(callback) x
- * 7.Move paddle x 
+ * 7.Move paddle x
  * 8.Keyboard event handlers to move paddle x
  * 9.Move ball
  * 10.Add wall boundaries
@@ -111,6 +111,50 @@ function movePaddle() {
   }
 }
 
+// Move ball on canvas
+function moveBall() {
+  ball.x += ball.dx;
+  ball.y += ball.dy;
+
+  // Wall collision detection(right/left)
+  if (ball.x + ball.size > canvas.clientWidth || ball.x - ball.size < 0) {
+    // Reverse the ball's direction
+    ball.dx *= -1;
+  }
+
+  // Wall collision detection(top/bottom)
+  if (ball.y + ball.size > canvas.clientHeight || ball.y - ball.size < 0) {
+    ball.dy *= -1;
+  }
+
+  // Paddle collision
+  if (
+    ball.x - ball.size > paddle.x &&
+    ball.x + ball.size < paddle.x + paddle.width &&
+    ball.y + ball.size > paddle.y
+  ) {
+    ball.dy = -ball.speed;
+  }
+
+  // Brick collision
+  bricks.forEach((column) => {
+    column.forEach((brick) => {
+      if (!brick.visible) return;
+
+      // Check if the ball hit any side of the brick
+      if (
+        ball.x - ball.size > brick.x && // left brick side check
+        ball.x + ball.size < brick.x + brick.width && // right brick side check
+        ball.y + ball.size > brick.y && // top brick side check
+        ball.y - ball.size < brick.y + brick.height // bottom brick side check
+      ) {
+        ball.dy *= -1;
+        brick.visible = false;
+      }
+    });
+  });
+}
+
 // Draw everything
 function draw() {
   // Clear canvas
@@ -125,7 +169,7 @@ function draw() {
 // Update canvas drawing and animation
 function update() {
   movePaddle();
-
+  moveBall();
   // Draw everything
   draw();
 
