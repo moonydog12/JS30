@@ -1,6 +1,8 @@
 const rulesBtn = document.querySelector('#rules-btn');
 const closeBtn = document.querySelector('#close-btn');
 const rules = document.querySelector('.rules');
+
+// 1)Create canvas context
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
 
@@ -9,23 +11,7 @@ let score = 0;
 const brickRowCount = 9;
 const brickColumnCount = 5;
 
-/**
- * todo:
- * 1.Create canvas context(X)
- * 2.Create and draw ball(X)
- * 3.Create and draw paddle(X)
- * 4.Create bricks x
- * 5.Draw score x
- * 6.Add update() feature - animate - requestAnimationFrame(callback) x
- * 7.Move paddle x
- * 8.Keyboard event handlers to move paddle x
- * 9.Move ball
- * 10.Add wall boundaries
- * 11.Increase score when bricks break
- * 12.Lose - redraw bricks, reset score
- */
-
-// Create ball props
+// 2)Setup ball props & draw it
 const ball = {
   x: canvas.clientWidth / 2,
   y: canvas.clientHeight / 2,
@@ -35,16 +21,15 @@ const ball = {
   dy: -4,
 };
 
-// Draw ball on canvas
-function drawBall() {
+const drawBall = () => {
   ctx.beginPath();
   ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2);
   ctx.fillStyle = '#0095dd';
   ctx.fill();
   ctx.closePath();
-}
+};
 
-// Create paddle props
+// 3)Setup paddle props & draw it
 const paddle = {
   x: canvas.clientWidth / 2 - 40,
   y: canvas.clientHeight - 20,
@@ -54,7 +39,15 @@ const paddle = {
   dx: 0,
 };
 
-// Create brick props
+const drawPaddle = () => {
+  ctx.beginPath();
+  ctx.rect(paddle.x, paddle.y, paddle.width, paddle.height);
+  ctx.fillStyle = '#0095dd';
+  ctx.fill();
+  ctx.closePath();
+};
+
+// 4)Setup brick props & create bunch of them
 const brickInfo = {
   width: 70,
   height: 20,
@@ -64,7 +57,7 @@ const brickInfo = {
   visible: true,
 };
 
-// Create bricks
+// The array store all the bricks info(objects) we created
 const bricks = [];
 for (let i = 0; i < brickRowCount; i++) {
   bricks[i] = [];
@@ -75,17 +68,8 @@ for (let i = 0; i < brickRowCount; i++) {
   }
 }
 
-// Draw paddle on canvas
-function drawPaddle() {
-  ctx.beginPath();
-  ctx.rect(paddle.x, paddle.y, paddle.width, paddle.height);
-  ctx.fillStyle = '#0095dd';
-  ctx.fill();
-  ctx.closePath();
-}
-
 // Draw bricks on canvas
-function drawBricks() {
+const drawBricks = () => {
   bricks.forEach((column) => {
     column.forEach((brick) => {
       ctx.beginPath();
@@ -95,13 +79,50 @@ function drawBricks() {
       ctx.closePath();
     });
   });
-}
+};
 
-// Move paddle on canvas
-function movePaddle() {
+// 5)Draw score on canvas
+const drawScore = () => {
+  ctx.font = '20px sans-serif';
+  ctx.fillText(`Score:${score}`, canvas.clientWidth - 100, 30);
+};
+
+// 6)Update canvas drawing and animation utils
+
+// Make all bricks appear
+const showAllBricks = () => {
+  bricks.forEach((column) => {
+    column.forEach((el) => {
+      const brick = el;
+      brick.visible = true;
+    });
+  });
+};
+
+// Draw everything
+const draw = () => {
+  // Clear canvas
+  ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+
+  drawPaddle();
+  drawBall();
+  drawScore();
+  drawBricks();
+};
+
+// 11)Increase score
+const increaseScore = () => {
+  score += 1;
+
+  if (score % (brickColumnCount * brickRowCount) === 0) {
+    showAllBricks();
+  }
+};
+
+// 7)Move paddle on canvas
+const movePaddle = () => {
   paddle.x += paddle.dx;
 
-  // Wall detection
   if (paddle.x + paddle.width > canvas.clientWidth) {
     paddle.x = canvas.clientWidth - paddle.width;
   }
@@ -109,13 +130,14 @@ function movePaddle() {
   if (paddle.x < 0) {
     paddle.x = 0;
   }
-}
+};
 
-// Move ball on canvas
+// 9)Move ball on canvas
 function moveBall() {
   ball.x += ball.dx;
   ball.y += ball.dy;
 
+  // 10)Wall detection(Add wall boundaries)
   // Wall collision detection(right/left)
   if (ball.x + ball.size > canvas.clientWidth || ball.x - ball.size < 0) {
     // Reverse the ball's direction
@@ -156,78 +178,42 @@ function moveBall() {
     });
   });
 
-  // Hit bottom wall - reset the game
+  // Hit bottom wall(Lose) - reset the game(redraw bricks & reset scores)
   if (ball.y + ball.size > canvas.clientHeight) {
     showAllBricks();
     score = 0;
   }
 }
 
-// Increase score
-function increaseScore() {
-  score += 1;
-
-  if (score % (brickColumnCount * brickRowCount) === 0) {
-    showAllBricks();
-  }
-}
-
-// Make all bricks appear
-function showAllBricks() {
-  bricks.forEach((column) => {
-    column.forEach((brick) => {
-      brick.visible = true;
-    });
-  });
-}
-
-// Draw everything
-function draw() {
-  // Clear canvas
-  ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-
-  drawPaddle();
-  drawBall();
-  drawScore();
-  drawBricks();
-}
-
-// Update canvas drawing and animation
-function update() {
+const update = () => {
   movePaddle();
   moveBall();
   // Draw everything
   draw();
 
   requestAnimationFrame(update);
-}
+};
 
 update();
 
-// Keydown event
-function keyDown(e) {
+// 8)Keyboard event handlers to move paddle
+const keyDown = (e) => {
   if (e.key === 'Right' || e.key === 'ArrowRight') {
     paddle.dx = paddle.speed;
   } else if (e.key === 'Left' || e.key === 'ArrowLeft') {
     paddle.dx = -paddle.speed;
   }
-}
+};
 
-function keyUp(e) {
+const keyUp = (e) => {
   if (e.key === 'Right' || e.key === 'ArrowRight' || e.key === 'Left' || e.key === 'ArrowLeft') {
     paddle.dx = 0;
   }
-}
+};
 
 // Keyboard event handlers
 document.addEventListener('keydown', keyDown);
 document.addEventListener('keyup', keyUp);
-
-// Draw score on canvas
-function drawScore() {
-  ctx.font = '20px Jetbrains mono';
-  ctx.fillText(`Score:${score}`, canvas.clientWidth - 100, 30);
-}
 
 // Rules and close event handlers
 rulesBtn.addEventListener('click', () => rules.classList.add('show'));
