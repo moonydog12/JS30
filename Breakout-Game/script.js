@@ -21,7 +21,7 @@ const ball = {
   dy: -4,
 };
 
-const drawBall = () => {
+const drawBall = function () {
   ctx.beginPath();
   ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2);
   ctx.fillStyle = '#0095dd';
@@ -39,7 +39,7 @@ const paddle = {
   dx: 0,
 };
 
-const drawPaddle = () => {
+const drawPaddle = function () {
   ctx.beginPath();
   ctx.rect(paddle.x, paddle.y, paddle.width, paddle.height);
   ctx.fillStyle = '#0095dd';
@@ -69,7 +69,7 @@ for (let i = 0; i < brickRowCount; i++) {
 }
 
 // Draw bricks on canvas
-const drawBricks = () => {
+const drawBricks = function () {
   bricks.forEach((column) => {
     column.forEach((brick) => {
       ctx.beginPath();
@@ -82,7 +82,7 @@ const drawBricks = () => {
 };
 
 // 5)Draw score on canvas
-const drawScore = () => {
+const drawScore = function () {
   ctx.font = '20px sans-serif';
   ctx.fillText(`Score:${score}`, canvas.clientWidth - 100, 30);
 };
@@ -90,7 +90,7 @@ const drawScore = () => {
 // 6)Update canvas drawing and animation utils
 
 // Make all bricks appear
-const showAllBricks = () => {
+const showAllBricks = function () {
   bricks.forEach((column) => {
     column.forEach((el) => {
       const brick = el;
@@ -100,7 +100,7 @@ const showAllBricks = () => {
 };
 
 // Draw everything
-const draw = () => {
+const draw = function () {
   // Clear canvas
   ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
 
@@ -111,7 +111,7 @@ const draw = () => {
 };
 
 // 11)Increase score
-const increaseScore = () => {
+const increaseScore = function () {
   score += 1;
 
   if (score % (brickColumnCount * brickRowCount) === 0) {
@@ -120,7 +120,7 @@ const increaseScore = () => {
 };
 
 // 7)Move paddle on canvas
-const movePaddle = () => {
+const movePaddle = function () {
   paddle.x += paddle.dx;
 
   if (paddle.x + paddle.width > canvas.clientWidth) {
@@ -133,7 +133,7 @@ const movePaddle = () => {
 };
 
 // 9)Move ball on canvas
-function moveBall() {
+const moveBall = function () {
   ball.x += ball.dx;
   ball.y += ball.dy;
 
@@ -183,9 +183,9 @@ function moveBall() {
     showAllBricks();
     score = 0;
   }
-}
+};
 
-const update = () => {
+const update = function () {
   movePaddle();
   moveBall();
   // Draw everything
@@ -197,7 +197,7 @@ const update = () => {
 update();
 
 // 8)Keyboard event handlers to move paddle
-const keyDown = (e) => {
+const keyDown = function (e) {
   if (e.key === 'Right' || e.key === 'ArrowRight') {
     paddle.dx = paddle.speed;
   } else if (e.key === 'Left' || e.key === 'ArrowLeft') {
@@ -205,7 +205,7 @@ const keyDown = (e) => {
   }
 };
 
-const keyUp = (e) => {
+const keyUp = function (e) {
   if (e.key === 'Right' || e.key === 'ArrowRight' || e.key === 'Left' || e.key === 'ArrowLeft') {
     paddle.dx = 0;
   }
