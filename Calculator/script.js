@@ -5,59 +5,67 @@ const equalBtn = document.querySelector('#equalBtn');
 const deleteBtn = document.querySelector('#deleteBtn');
 const clearBtn = document.querySelector('#clearBtn');
 
-let firstValue = '';
-let secondValue = '';
-let symbol = '';
+let num1 = null;
+let num2 = null;
+let operator = null;
 
-// Functions
 // operate functions
-const roundNumber = (num) => (num.toString().length >= 5 ? parseFloat(num).toFixed(2) : num);
+const roundNumber = (num) => (num.toString().length >= 4 ? parseFloat(num).toFixed(2) : num);
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 const divide = (a, b) => roundNumber(a / b);
 
-const calculate = (a, b, operator) => {
-  const num1 = +a;
-  const num2 = +b;
+const calculate = (num1, num2, operator) => {
+  const firstNumber = parseInt(num1);
+  const secondNumber = parseInt(num2);
   const operations = {
-    '+': add(num1, num2),
-    '-': subtract(num1, num2),
-    '×': multiply(num1, num2),
-    '÷': divide(num1, num2),
+    '+': add(firstNumber, secondNumber),
+    '-': subtract(firstNumber, secondNumber),
+    '×': multiply(firstNumber, secondNumber),
+    '÷': divide(firstNumber, secondNumber),
   };
   return operations[operator];
 };
 
-// Delete one digit when user click delete button
 const deleteNumber = () => {
   mainScreen.innerHTML = mainScreen.innerHTML.toString().slice(0, -1);
 };
 
-const appendNumber = (num) => {
-  mainScreen.textContent += num;
-};
-
 const clearAll = () => {
-  firstValue = null;
-  secondValue = null;
-  symbol = null;
+  num1 = null;
+  num2 = null;
+  operator = null;
   mainScreen.innerHTML = '';
   subScreen.innerHTML = '';
 };
 
 // Listeners
-buttonsContainer.addEventListener('click', (event) => {
-  if (event.target.matches('.digit-btn')) {
-    const number = event.target.textContent;
-    appendNumber(number);
-    firstValue = mainScreen.textContent;
-  }
+document.querySelectorAll('.digit-btn').forEach((btn) => {
+  btn.addEventListener('click', (event) => {
+    mainScreen.textContent += event.target.textContent;
+  });
 });
 
-buttonsContainer.addEventListener('click', (event) => {
-  if (event.target.matches('.operator-btn')) {
+document.querySelectorAll('.operator-btn').forEach((btn) => {
+  btn.addEventListener('click', (event) => {
+    num1 = mainScreen.textContent;
+    operator = event.target.textContent;
+    subScreen.innerHTML = `${num1} ${operator}`;
+    mainScreen.innerHTML = '';
+  });
+});
+
+equalBtn.addEventListener('click', (event) => {
+  num2 = mainScreen.innerHTML;
+
+  if (!num1 || !num2) {
+    alert('Missing numbers');
+    return;
   }
+  mainScreen.innerHTML = calculate(num1, num2, operator);
+  num2 = null;
+  num1 = null;
 });
 
 deleteBtn.addEventListener('click', deleteNumber);
