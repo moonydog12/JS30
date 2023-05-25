@@ -5,6 +5,7 @@ const deleteButton = document.querySelector('#deleteBtn');
 const clearButton = document.querySelector('#clearBtn');
 const digitButtons = document.querySelectorAll('.digit-btn');
 const operatorButtons = document.querySelectorAll('.operator-btn');
+const dotButton = document.querySelector('.dot-btn');
 
 let num1 = null;
 let num2 = null;
@@ -19,8 +20,8 @@ const multiply = (a, b) => a * b;
 const divide = (a, b) => roundNumber(a / b);
 
 const calculate = (a, b, symbol) => {
-  const firstNumber = parseInt(a, 10);
-  const secondNumber = parseInt(b, 10);
+  const firstNumber = +a;
+  const secondNumber = +b;
   let solution;
 
   switch (symbol) {
@@ -48,7 +49,7 @@ const resetScreen = () => {
 };
 
 const evaluate = () => {
-  if (operator === null) return;
+  if (operator === null || shouldResetScreen) return;
   if (operator === '÷' && mainScreen.textContent === '0') return;
   num2 = mainScreen.textContent;
   mainScreen.textContent = calculate(num1, num2, operator);
@@ -63,6 +64,13 @@ const setOperator = (symbol) => {
   subScreen.textContent = `${num1} ${operator}`;
   mainScreen.textContent = '';
   shouldResetScreen = true;
+};
+
+const appendPoint = () => {
+  if (shouldResetScreen) resetScreen();
+  if (mainScreen.textContent === '') mainScreen.textContent = '0';
+  if (mainScreen.textContent.includes('.')) return;
+  mainScreen.textContent += '.';
 };
 
 const deleteNumber = () => {
@@ -90,6 +98,6 @@ operatorButtons.forEach((button) => {
 });
 
 equalButton.addEventListener('click', evaluate);
-
 deleteButton.addEventListener('click', deleteNumber);
 clearButton.addEventListener('click', allClear);
+dotButton.addEventListener('click', appendPoint);
