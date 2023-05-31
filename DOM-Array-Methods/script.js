@@ -29,8 +29,9 @@ const addData = (user) => {
 // double everyone's money
 const doubleMoney = () => {
   persons = persons.map((person) => {
-    person.money *= 2;
-    return person;
+    const personCopy = person;
+    personCopy.money *= 2;
+    return personCopy;
   });
   updateDOM();
 };
@@ -45,7 +46,13 @@ const sortByRichest = () => {
 
 // calculate total money
 const calculateWealth = () => {
-  const wealth = formatMoney(persons.reduce((acc, user) => (acc += user.money), 0));
+  const wealth = formatMoney(
+    persons.reduce((acc, user) => {
+      let accCopy = acc;
+      accCopy += user.money;
+      return accCopy;
+    }, 0),
+  );
 
   const wealthEl = document.createElement('div');
   wealthEl.innerHTML = `<h3>Total Wealth : <strong>$${wealth}</strong></h3>`;

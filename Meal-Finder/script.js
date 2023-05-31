@@ -16,15 +16,14 @@ const searchMeal = async (event) => {
 
   // Get search string from the input
   const term = searchInput.value.trim();
-  if (term) {
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`);
-    const data = await response.json();
-    resultHeading.innerHTML = `<h2>Search results for '${term}':</h2>`;
+  if (!term) return;
+  const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`);
+  const data = await response.json();
 
-    if (data.meals) {
-      mealsEl.innerHTML = data.meals
-        .map(
-          (meal) => `
+  if (data.meals) {
+    mealsEl.innerHTML = data.meals
+      .map(
+        (meal) => `
         <div class="meal">
           <img src="${meal.strMealThumb}" alt="${meal.strMeal}"/>
           <div class="meal-info" data-mealID="${meal.idMeal}">
@@ -32,15 +31,14 @@ const searchMeal = async (event) => {
           </div>
         </div>
         `,
-        )
-        .join('');
-    } else {
-      resultHeading.innerHTML = `<p>There are no search results of ${term}, please try again!</p>`;
-    }
-
-    // Clear search text
-    searchInput.value = '';
+      )
+      .join('');
+  } else {
+    resultHeading.innerHTML = `<p>There are no search results of ${term}, please try again!</p>`;
   }
+
+  // Clear search text
+  searchInput.value = '';
 };
 
 // Generate HTML template and insert meal information into it

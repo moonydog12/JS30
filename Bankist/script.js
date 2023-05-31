@@ -256,8 +256,12 @@ const slider = () => {
 
   // Keyboard support
   document.addEventListener('keydown', (event) => {
-    event.key === 'ArrowLeft' && prevSlide();
-    event.key === 'ArrowRight' && nextSlide();
+    if (event.key === 'ArrowLeft') {
+      prevSlide();
+    }
+    if (event.key === 'ArrowRight') {
+      nextSlide();
+    }
   });
 
   dotContainer.addEventListener('click', (event) => {

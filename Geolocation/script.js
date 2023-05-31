@@ -6,5 +6,7 @@ navigator.geolocation.watchPosition(
     speed.textContent = Math.round(data.coords.speed);
     arrow.style.transform = `rotate(${data.coords.heading}deg)`;
   },
-  (err) => console.error(err)
+  (err) => {
+    console.error(err);
+  },
 );

@@ -40,12 +40,20 @@ const pauseSong = () => {
 
 // Switch song
 const switchSong = (direction) => () => {
-  if (direction === 'prev') {
-    songIndex -= 1;
-    songIndex < 0 ? (songIndex = songs.length - 1) : songIndex;
-  } else if (direction === 'next') {
-    songIndex += 1;
-    songIndex > songs.length - 1 ? (songIndex = 0) : songIndex;
+  switch (direction) {
+    case 'prev':
+      songIndex -= 1;
+      if (songIndex < 0) {
+        songIndex = songs.length - 1;
+      }
+      break;
+    case 'next':
+      songIndex += 1;
+      if (songIndex > songs.length - 1) {
+        songIndex = 0;
+      }
+      break;
+    default:
   }
   loadSong(songs[songIndex]);
   playSong();
@@ -72,7 +80,11 @@ loadSong(songs[songIndex]);
 // Listener
 playBtn.addEventListener('click', () => {
   const isPlaying = musicContainer.classList.contains('play');
-  isPlaying ? pauseSong() : playSong();
+  if (isPlaying) {
+    pauseSong();
+  } else {
+    playSong();
+  }
 });
 
 // Change song

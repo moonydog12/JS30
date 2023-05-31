@@ -7,12 +7,11 @@ const speakButton = document.querySelector('#speak');
 const stopButton = document.querySelector('#stop');
 msg.text = document.querySelector('[name="text"]').value;
 
-synth.addEventListener('voiceschanged', populateVoices);
-voicesDropdown.addEventListener('change', setVoice);
-options.forEach((option) => option.addEventListener('change', setOption));
-speakButton.addEventListener('click', toggle);
-// stopButton.addEventListener('click', toggle.bind(null, false));
-stopButton.addEventListener('click', () => toggle(false));
+// 播放切換
+function toggle(startOver = true) {
+  speechSynthesis.cancel();
+  if (startOver) speechSynthesis.speak(msg);
+}
 
 function populateVoices() {
   voices = this.getVoices();
@@ -31,14 +30,15 @@ function setVoice() {
   toggle();
 }
 
-// 播放切換
-function toggle(startOver = true) {
-  speechSynthesis.cancel();
-  if (startOver) speechSynthesis.speak(msg);
-}
-
 // 設定速率跟音準
 function setOption() {
   msg[this.name] = this.value;
   toggle();
 }
+
+synth.addEventListener('voiceschanged', populateVoices);
+voicesDropdown.addEventListener('change', setVoice);
+options.forEach((option) => option.addEventListener('change', setOption));
+speakButton.addEventListener('click', toggle);
+// stopButton.addEventListener('click', toggle.bind(null, false));
+stopButton.addEventListener('click', () => toggle(false));

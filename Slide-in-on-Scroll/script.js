@@ -3,9 +3,8 @@ const sliderImages = document.querySelectorAll('.slide-in');
 // 讓函式在一定時間內只能觸發一次
 function debounce(func, wait = 20, immediate = true) {
   let timeout;
-  return function () {
+  return (...args) => {
     const context = this;
-    const args = arguments;
     const later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);

@@ -86,7 +86,7 @@ const data = [
 // 1. Filter the list of inventors for those who were born in the 1500's
 // 箭頭函式寫法
 const bornInFifteenArrow = inventors.filter(
-  (inventor) => inventor.year > 1499 && inventor.year < 1600
+  (inventor) => inventor.year > 1499 && inventor.year < 1600,
 );
 const bornInFifteen = inventors.filter(function (inventor) {
   return inventor.year > 1499 && inventor.year < 1600;
