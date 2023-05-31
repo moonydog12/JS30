@@ -18,24 +18,25 @@ const searchMeal = async (event) => {
   const term = searchInput.value.trim();
   if (!term) return;
   const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`);
-  const data = await response.json();
+  const { meals } = await response.json();
 
-  if (data.meals) {
-    mealsEl.innerHTML = data.meals
-      .map(
-        (meal) => `
-        <div class="meal">
-          <img src="${meal.strMealThumb}" alt="${meal.strMeal}"/>
-          <div class="meal-info" data-mealID="${meal.idMeal}">
-            <h3>${meal.strMeal}</h3>
-          </div>
-        </div>
-        `,
-      )
-      .join('');
-  } else {
+  if (!meals) {
     resultHeading.innerHTML = `<p>There are no search results of ${term}, please try again!</p>`;
+    return;
   }
+
+  mealsEl.innerHTML = meals
+    .map(
+      (meal) => `
+    <div class="meal">
+      <img src="${meal.strMealThumb}" alt="${meal.strMeal}"/>
+      <div class="meal-info" data-mealID="${meal.idMeal}">
+        <h3>${meal.strMeal}</h3>
+      </div>
+    </div>
+    `,
+    )
+    .join('');
 
   // Clear search text
   searchInput.value = '';
